@@ -1,0 +1,115 @@
+<!-- Section 1: Distribusi IPK & Analisis Kelulusan -->
+<div class="section-ipk-kelulusan">
+    <div class="dashboard-content-inner px-0 pt-0 pb-5">
+        <div class="content-left">
+            <i class="fas fa-chart-bar content-icon"></i>
+            <div class="content-title-wrapper">
+                <h1>Distribusi IPK &amp; Analisis Kelulusan</h1>
+                <div class="content-underline"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Palette Card Container (background #8BBB92) -->
+    <div class="card-bg">
+        <div class="ipk-card-bg-fix">
+
+            <!-- 4 Stat Metric Cards with Vibrant Modern Gradients -->
+            <div class="wd1-stat-grid">
+                <!-- Card 1: IPK Rata-rata Mahasiswa -->
+                <div class="wd1-card wd1-card-purple">
+                    <div class="wd1-card-header">
+                        <span class="wd1-card-title">IPK Rata-rata Mahasiswa</span>
+                        <button type="button" class="wd1-card-info-btn" title="Rata-rata IPK Mahasiswa Aktif">i</button>
+                    </div>
+                    <div class="wd1-card-body">
+                        <span class="wd1-card-value" id="valWd1Ipk">3.38</span>
+                    </div>
+                    <div class="wd1-card-footer">
+                        <span class="wd1-card-subtext" id="subWd1Ipk">1.245 mahasiswa aktif</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Kelulusan Tepat Waktu -->
+                <div class="wd1-card wd1-card-mint">
+                    <div class="wd1-card-header">
+                        <span class="wd1-card-title">Kelulusan Tepat Waktu</span>
+                        <button type="button" class="wd1-card-info-btn" title="Persentase Kelulusan Tepat Waktu">i</button>
+                    </div>
+                    <div class="wd1-card-body">
+                        <span class="wd1-card-value" id="valWd1Kelulusan">78%</span>
+                    </div>
+                    <div class="wd1-card-footer">
+                        <span class="wd1-card-subtext" id="subWd1Kelulusan">342 dari 438 lulusan</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Akreditasi Kadaluarsa <1 Thn -->
+                <div class="wd1-card wd1-card-coral">
+                    <div class="wd1-card-header">
+                        <span class="wd1-card-title">Akreditasi Kadaluarsa &lt;1 Thn</span>
+                        <button type="button" class="wd1-card-info-btn" title="Program Studi Mendekati Kadaluarsa Akreditasi">i</button>
+                    </div>
+                    <div class="wd1-card-body">
+                        <span class="wd1-card-value" id="valWd1Akreditasi">0</span>
+                    </div>
+                    <div class="wd1-card-footer">
+                        <span class="wd1-card-subtext" id="subWd1Akreditasi">dari 6 program studi</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Early Warning Mahasiswa -->
+                <div class="wd1-card wd1-card-magenta">
+                    <div class="wd1-card-header">
+                        <span class="wd1-card-title">Early Warning Mahasiswa</span>
+                        <button type="button" class="wd1-card-info-btn" title="Mahasiswa Butuh Perhatian Khusus / Evaluasi Studi">i</button>
+                    </div>
+                    <div class="wd1-card-body">
+                        <span class="wd1-card-value" id="valWd1EarlyWarning">14</span>
+                    </div>
+                    <div class="wd1-card-footer">
+                        <span class="wd1-card-subtext" id="subWd1EarlyWarning">3 kritis · 11 peringatan</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2 Charts Grid -->
+            <div class="wd1-charts-grid">
+                <!-- Chart 1: Distribusi IPK Mahasiswa Aktif -->
+                <div class="wd1-chart-card">
+                    <div class="wd1-chart-header">
+                        <div style="width: 20px;"></div>
+                        <h4 class="wd1-chart-title">Distribusi IPK Mahasiswa Aktif</h4>
+                        <button type="button" class="wd1-chart-info-btn" title="Distribusi rentang nilai IPK mahasiswa aktif">i</button>
+                    </div>
+                    <div class="wd1-chart-body">
+                        <canvas id="chartWd1DistribusiIpk"></canvas>
+                    </div>
+                </div>
+
+                <!-- Chart 2: Kelulusan Tepat Waktu vs Terlambat -->
+                <div class="wd1-chart-card">
+                    <div class="wd1-chart-header">
+                        <div style="width: 20px;"></div>
+                        <h4 class="wd1-chart-title">Kelulusan Tepat Waktu vs Terlambat</h4>
+                        <button type="button" class="wd1-chart-info-btn" title="Komparasi kelulusan tepat waktu vs terlambat">i</button>
+                    </div>
+                    <div class="wd1-chart-body">
+                        <canvas id="chartWd1Kelulusan"></canvas>
+                    </div>
+                    <div class="wd1-chart-legend">
+                        <div class="wd1-legend-item">
+                            <span class="wd1-legend-box tepat-waktu"></span>
+                            <span id="legendTextTepatWaktu">Tepat Waktu (342)</span>
+                        </div>
+                        <div class="wd1-legend-item">
+                            <span class="wd1-legend-box terlambat"></span>
+                            <span id="legendTextTerlambat">Terlambat (96)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

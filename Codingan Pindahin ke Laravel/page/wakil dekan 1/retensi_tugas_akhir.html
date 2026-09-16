@@ -1,0 +1,119 @@
+<!-- Section 2: Retensi & Progres Tugas Akhir -->
+<div class="section-retensi-tugas-akhir">
+    <div class="dashboard-content-inner px-0 pt-0 pb-5">
+        <div class="content-left">
+            <i class="fas fa-scroll content-icon"></i>
+            <div class="content-title-wrapper">
+                <h1>Retensi &amp; Progres Tugas Akhir</h1>
+                <div class="content-underline"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Palette Card Container (background #8BBB92) -->
+    <div class="card-bg">
+        <div class="ret-card-bg-fix">
+
+            <!-- 4 Stat Metric Cards with Vibrant Modern Gradients -->
+            <div class="ret-stat-grid">
+                <!-- Card 1: Total Tugas Akhir -->
+                <div class="ret-card ret-card-blue">
+                    <div class="ret-card-header">
+                        <span class="ret-card-title">Total Tugas Akhir</span>
+                        <button type="button" class="ret-card-info-btn" title="Total Mahasiswa Tugas Akhir">i</button>
+                    </div>
+                    <div class="ret-card-body">
+                        <span class="ret-card-value" id="valRetTotalTa">248</span>
+                    </div>
+                    <div class="ret-card-footer">
+                        <span class="ret-card-subtext" id="subRetTotalTa">&nbsp;</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Selesai -->
+                <div class="ret-card ret-card-green">
+                    <div class="ret-card-header">
+                        <span class="ret-card-title">Selesai</span>
+                        <button type="button" class="ret-card-info-btn" title="Tugas Akhir yang Telah Selesai">i</button>
+                    </div>
+                    <div class="ret-card-body">
+                        <span class="ret-card-value" id="valRetSelesai">176</span>
+                    </div>
+                    <div class="ret-card-footer">
+                        <span class="ret-card-subtext" id="subRetSelesai">71% completion</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Dalam Proses -->
+                <div class="ret-card ret-card-orange">
+                    <div class="ret-card-header">
+                        <span class="ret-card-title">Dalam Proses</span>
+                        <button type="button" class="ret-card-info-btn" title="Tugas Akhir Sedang Dikerjakan / Bimbingan">i</button>
+                    </div>
+                    <div class="ret-card-body">
+                        <span class="ret-card-value" id="valRetDalamProses">54</span>
+                    </div>
+                    <div class="ret-card-footer">
+                        <span class="ret-card-subtext" id="subRetDalamProses">22% aktif bimbingan</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Terlambat -->
+                <div class="ret-card ret-card-pink">
+                    <div class="ret-card-header">
+                        <span class="ret-card-title">Terlambat</span>
+                        <button type="button" class="ret-card-info-btn" title="Tugas Akhir Melebihi Batas Waktu Normal">i</button>
+                    </div>
+                    <div class="ret-card-body">
+                        <span class="ret-card-value" id="valRetTerlambat">18</span>
+                    </div>
+                    <div class="ret-card-footer">
+                        <span class="ret-card-subtext" id="subRetTerlambat">Perlu monitoring</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2 Charts Grid -->
+            <div class="ret-charts-grid">
+                <!-- Chart 1: Retensi Mahasiswa per Angkatan -->
+                <div class="ret-chart-card">
+                    <div class="ret-chart-header">
+                        <div style="width: 20px;"></div>
+                        <h4 class="ret-chart-title">Retensi Mahasiswa per Angkatan</h4>
+                        <button type="button" class="ret-chart-info-btn" title="Persentase retensi mahasiswa per tahun angkatan">i</button>
+                    </div>
+                    <div class="ret-chart-body">
+                        <canvas id="chartWd1RetensiAngkatan"></canvas>
+                    </div>
+                </div>
+
+                <!-- Chart 2: Status Tugas Akhir -->
+                <div class="ret-chart-card">
+                    <div class="ret-chart-header">
+                        <div style="width: 20px;"></div>
+                        <h4 class="ret-chart-title">Status Tugas Akhir</h4>
+                        <button type="button" class="ret-chart-info-btn" title="Distribusi status penyelesaian tugas akhir">i</button>
+                    </div>
+                    <div class="ret-chart-body">
+                        <canvas id="chartWd1StatusTa"></canvas>
+                    </div>
+                    <div class="ret-chart-legend">
+                        <div class="ret-legend-item">
+                            <span class="ret-legend-box selesai"></span>
+                            <span id="legendRetSelesai">Selesai (176)</span>
+                        </div>
+                        <div class="ret-legend-item">
+                            <span class="ret-legend-box dalam-proses"></span>
+                            <span id="legendRetDalamProses">Dalam Proses (54)</span>
+                        </div>
+                        <div class="ret-legend-item">
+                            <span class="ret-legend-box terlambat"></span>
+                            <span id="legendRetTerlambat">Terlambat (18)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

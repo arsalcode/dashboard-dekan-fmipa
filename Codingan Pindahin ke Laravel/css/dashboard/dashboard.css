@@ -1,0 +1,707 @@
+/* ============================================
+   DASHBOARD CONTENT FILTER STYLES
+   ============================================ */
+
+/* --- WRAPPER UTAMA (DASHBOARD) --- */
+.Dashboard-content-filter {
+  position: relative;
+  overflow: visible;
+  /* Ganti warna background filter dashboard di bawah ini: */
+  background: linear-gradient(135deg, #0D0B61, #24218a);
+  border-radius: 16px;
+  padding: 20px 24px 60px 24px;
+  box-shadow: 0 8px 30px rgba(13, 11, 97, 0.3);
+  transition: all 0.3s ease;
+}
+
+.Dashboard-content-filter:hover {
+  box-shadow: 0 12px 40px rgba(13, 11, 97, 0.4);
+}
+
+/* --- FILTER SECTION --- */
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 16px;
+}
+
+.filter-left {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-label i {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.filter-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+/* --- FILTER TABS --- */
+.filter-tabs {
+  border-bottom: none;
+}
+
+.filter-tab {
+  padding: 7px 20px;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.3px;
+}
+
+.filter-tab:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.filter-tab.active {
+  background: white;
+  /* Ganti warna teks tab aktif dashboard di bawah ini: */
+  color: #0D0B61;
+  border-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.filter-tab.active:hover {
+  background: #f8fafc;
+  color: #5a237a;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* --- FILTER BUTTON --- */
+.filter-btn {
+  padding: 7px 18px;
+  border: none;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-btn-apply {
+  background: white;
+  color: #722F99;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn-apply:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.filter-btn-apply i {
+  font-size: 12px;
+}
+
+/* --- DASHBOARD CONTENT (Menggantung) --- */
+.Dashboard-content {
+  position: absolute;
+  bottom: -180px;
+  left: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.Dashboard-content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 45px rgba(0, 0, 0, 0.18);
+}
+
+.dashboard-content-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  gap: 12px;
+}
+
+.content-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.content-icon {
+  font-size: 20px;
+  color: #722F99;
+  background: rgba(114, 47, 153, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Dashboard-content h1 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1f2937;
+  letter-spacing: -0.5px;
+}
+
+.Dashboard-content h1::before {
+  content: '';
+  display: none;
+}
+
+.content-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.content-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #059669;
+  background: #d1fae5;
+  padding: 4px 14px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.content-badge i {
+  font-size: 6px;
+  color: #10b981;
+}
+
+.content-date {
+  font-size: 12px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.content-date i {
+  color: #9ca3af;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .Dashboard-content-filter {
+    padding: 16px 16px 75px 16px;
+  }
+
+  .filter-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-left {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-tab {
+    text-align: center;
+    padding: 6px 14px;
+  }
+
+  .filter-right {
+    justify-content: center;
+  }
+
+  .Dashboard-content {
+    left: 12px;
+    right: 12px;
+    bottom: -40px;
+  }
+
+  .dashboard-content-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 18px;
+  }
+
+  .content-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .Dashboard-content h1 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .Dashboard-content-filter {
+    padding: 12px 12px 65px 12px;
+  }
+
+  .filter-tab {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+
+  .filter-btn {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  .Dashboard-content {
+    left: 8px;
+    right: 8px;
+    bottom: -35px;
+  }
+
+  .dashboard-content-inner {
+    padding: 14px;
+  }
+
+  .content-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .content-badge {
+    font-size: 10px;
+    padding: 3px 10px;
+  }
+
+  .content-date {
+    font-size: 10px;
+  }
+}
+
+/* ============== */
+/* --- CONTENT TITLE WITH UNDERLINE --- */
+.content-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.content-title-wrapper h1 {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1f2937;
+    letter-spacing: -0.5px;
+}
+
+.content-underline {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #722F99, #a855f7, #722F99);
+    border-radius: 4px;
+    animation: underlineGrow 0.6s ease forwards;
+    position: relative;
+}
+
+/* Animasi garis muncul dari kiri */
+@keyframes underlineGrow {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+/* Atau bisa juga pakai pseudo-element */
+.content-title-wrapper h1 {
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.content-title-wrapper h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #722F99, #a855f7, #722F99);
+    border-radius: 4px;
+    animation: underlineGrow 0.6s ease forwards;
+}
+
+
+/* ================= */
+/* ============================================
+   DASHBOARD CARDS - Di Bawah Garis
+   ============================================ */
+
+/* --- WRAPPER CARD --- */
+.dashboard-cards-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+    padding: 0 4px 4px 4px;
+}
+
+/* --- CARD INDIVIDUAL --- */
+.dashboard-card {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid #f1f5f9;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    border-color: #e2e8f0;
+    background: white;
+}
+
+/* --- ICON CARD --- */
+.card-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.dashboard-card:hover .card-icon-wrapper {
+    transform: scale(1.05);
+}
+
+.card-icon-purple {
+    background: rgba(114, 47, 153, 0.12);
+    color: #722F99;
+}
+
+.card-icon-teal {
+    background: rgba(20, 184, 166, 0.12);
+    color: #14b8a6;
+}
+
+
+
+/* ============================================
+   CARD - 2 CARD DI BAWAH GARIS
+   ============================================ */
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 0 24px 8px 24px;
+}
+
+/* --- CARD INDIVIDUAL --- */
+.dashboard-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #f1f5f9;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  border-color: #e2e8f0;
+  background: white;
+}
+
+/* --- ICON CARD --- */
+.card-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.dashboard-card:hover .card-icon-wrapper {
+  transform: scale(1.05);
+}
+
+.card-icon-purple {
+  background: rgba(114, 47, 153, 0.12);
+  color: #722F99;
+}
+
+.card-icon-teal {
+  background: rgba(20, 184, 166, 0.12);
+  color: #14b8a6;
+}
+
+/* --- CONTENT CARD --- */
+.card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 2px 0;
+}
+
+.card-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.card-trend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.trend-up {
+  font-size: 11px;
+  font-weight: 600;
+  color: #10b981;
+  background: #d1fae5#d1fae5;
+  padding: 1px 8px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.trend-up i {
+  font-size: 8px;
+}
+
+.trend-text {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .Dashboard-content-filter {
+    padding: 16px 16px 75px 16px;
+  }
+
+  .filter-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-left {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-tab {
+    text-align: center;
+    padding: 6px 14px;
+  }
+
+  .Dashboard-content {
+    left: 12px;
+    right: 12px;
+    bottom: -40px;
+  }
+
+  .dashboard-content-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 18px;
+  }
+
+  .Dashboard-content h1 {
+    font-size: 1.1rem;
+  }
+
+  .card {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 16px 8px 16px;
+  }
+
+  .dashboard-card {
+    padding: 14px 16px;
+  }
+
+  .card-value {
+    font-size: 20px;
+  }
+
+  .card-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Dashboard-content-filter {
+    padding: 12px 12px 65px 12px;
+  }
+
+  .filter-tab {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+
+  .Dashboard-content {
+    left: 8px;
+    right: 8px;
+    bottom: -35px;
+  }
+
+  .dashboard-content-inner {
+    padding: 14px;
+  }
+
+  .content-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .content-title-wrapper h1 {
+    font-size: 1rem;
+  }
+
+  .card {
+    padding: 0 12px 8px 12px;
+  }
+
+  .dashboard-card {
+    padding: 12px 14px;
+    gap: 12px;
+    background: #8BBB92 !important;
+  }
+
+  .card-value {
+    font-size: 18px;
+  }
+
+  .card-icon-wrapper {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .card-label {
+    font-size: 10px;
+  }
+
+  .trend-up {
+    font-size: 10px;
+    padding: 1px 6px;
+  }
+
+  .trend-text {
+    font-size: 10px;
+  }
+}
+
+.Dashboard-content {
+  top: 92px;
+  bottom: auto;
+}
+
+@media (max-width: 768px) {
+  .Dashboard-content {
+    top: 82px;
+    bottom: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .Dashboard-content {
+    top: 72px;
+    bottom: auto;
+  }
+}
+
+/* ==================
+ */
+
+ .card-bg{
+
+  /* height: 100%; */
+  /* width: 100%; */
+   display: flex;
+  align-items: center;
+  justify-content: center;
+   /* background: #770477; */
+ }
+
+.card-bg-fix {
+   background: #8BBB92;
+  height: 280px;
+  width: 930px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,139 @@
+<!-- Section: SDM Mahasiswa -->
+<div class="section-sdm-mahasiswa">
+    <div class="dashboard-content-inner">
+        <div class="content-left">
+            <i class="fas fa-user-graduate content-icon"></i>
+            <div class="content-title-wrapper">
+                <h1>SDM Mahasiswa</h1>
+                <div class="content-underline"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Palette Card Container (#294669) -->
+    <div class="card-bg">
+        <div class="card-bg-fix">
+            <!-- 4 Stat Metric Cards (Palette: #0D0B61 | #294669 | #3D818A | #E5D026) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-5 w-full">
+                <!-- Card 1: Total Mahasiswa (#0D0B61) -->
+                <div class="metric-card-mahasiswa metric-palette-1">
+                    <div class="metric-card-header">
+                        <span class="metric-card-title">Total Mahasiswa</span>
+                        <button type="button" class="metric-info-btn" title="Informasi Total Mahasiswa">
+                            <i class="fas fa-info"></i>
+                        </button>
+                    </div>
+                    <div class="metric-card-body">
+                        <span class="metric-main-value" id="valTotalMahasiswa">1.370</span>
+                    </div>
+                    <div class="metric-card-footer">
+                        <span class="metric-subtext" id="subTotalMahasiswa">Aktif: 1.245</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: IPK Rata-rata (#294669) -->
+                <div class="metric-card-mahasiswa metric-palette-2">
+                    <div class="metric-card-header">
+                        <span class="metric-card-title">IPK Rata-rata</span>
+                        <button type="button" class="metric-info-btn" title="Informasi IPK Rata-rata">
+                            <i class="fas fa-info"></i>
+                        </button>
+                    </div>
+                    <div class="metric-card-body">
+                        <span class="metric-main-value" id="valIpkRataRata">3.38</span>
+                    </div>
+                    <div class="metric-card-footer">
+                        <span class="metric-subtext">&nbsp;</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Kelulusan Tepat Waktu (#3D818A) -->
+                <div class="metric-card-mahasiswa metric-palette-3">
+                    <div class="metric-card-header">
+                        <span class="metric-card-title">Kelulusan Tepat Waktu</span>
+                        <button type="button" class="metric-info-btn" title="Informasi Kelulusan Tepat Waktu">
+                            <i class="fas fa-info"></i>
+                        </button>
+                    </div>
+                    <div class="metric-card-body">
+                        <span class="metric-main-value" id="valKelulusanTepatWaktu">84%</span>
+                    </div>
+                    <div class="metric-card-footer">
+                        <span class="metric-subtext" id="subKelulusanTepatWaktu">Tahun Akademik 2025/2026</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Tingkat Retensi (#E5D026) -->
+                <div class="metric-card-mahasiswa metric-palette-4">
+                    <div class="metric-card-header">
+                        <span class="metric-card-title">Tingkat Retensi</span>
+                        <button type="button" class="metric-info-btn" title="Informasi Tingkat Retensi">
+                            <i class="fas fa-info"></i>
+                        </button>
+                    </div>
+                    <div class="metric-card-body">
+                        <span class="metric-main-value" id="valTingkatRetensi">92%</span>
+                    </div>
+                    <div class="metric-card-footer">
+                        <span class="metric-subtext" id="subTingkatRetensi">Tahun Akademik 2025/2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 Distribution & Correlation Charts Row -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
+                <!-- Chart 1: Distribusi Status Mahasiswa -->
+                <div class="chart-card-mahasiswa">
+                    <div class="chart-card-header">
+                        <h3 class="chart-title">Distribusi Status Mahasiswa</h3>
+                        <span class="chart-info-badge">i</span>
+                    </div>
+                    <div class="chart-canvas-wrapper">
+                        <canvas id="chartStatusMahasiswa"></canvas>
+                    </div>
+                </div>
+
+                <!-- Chart 2: Distribusi IPK Mahasiswa -->
+                <div class="chart-card-mahasiswa">
+                    <div class="chart-card-header">
+                        <h3 class="chart-title">Distribusi IPK Mahasiswa</h3>
+                        <span class="chart-info-badge">i</span>
+                    </div>
+                    <div class="chart-canvas-wrapper">
+                        <canvas id="chartIpkMahasiswa"></canvas>
+                    </div>
+                </div>
+
+                <!-- Chart 3: Korelasi IPK vs SKS -->
+                <div class="chart-card-mahasiswa">
+                    <div class="chart-card-header mb-1">
+                        <h3 class="chart-title">Korelasi IPK vs SKS</h3>
+                        <span class="chart-info-badge">i</span>
+                    </div>
+                    <!-- Custom Chart Legend Matching UI -->
+                    <div class="flex flex-wrap items-center justify-center gap-2 mb-2 text-[10px] font-semibold text-gray-600">
+                        <div class="flex items-center gap-1">
+                            <span class="w-3 border-t-2 border-dashed border-[#0D0B61] inline-block"></span>
+                            <span>Target IPK 3.0</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <span class="w-2.5 h-2.5 rounded-sm bg-[#3D818A] inline-block"></span>
+                            <span>Aktif</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <span class="w-2.5 h-2.5 rounded-sm bg-[#E5D026] inline-block"></span>
+                            <span>Cuti</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <span class="w-2.5 h-2.5 rounded-sm bg-[#ef4444] inline-block"></span>
+                            <span>Tidak Aktif</span>
+                        </div>
+                    </div>
+                    <div class="chart-canvas-wrapper">
+                        <canvas id="chartKorelasiIpkSks"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

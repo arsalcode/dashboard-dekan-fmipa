@@ -1,0 +1,304 @@
+/* ============================================
+   DATA MAHASISWA FMIPA PER PRODI
+   FMIPA UNIVERSITAS PAKUAN
+   Tema Sage Green (#8BBB92) & Tabel Mahasiswa
+   ============================================ */
+
+/* ── Section wrapper ── */
+.section-data-mahasiswa-prodi {
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 28px;
+}
+
+/* ── Background container (#8BBB92) ── */
+.section-data-mahasiswa-prodi .card-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.data-mhs-overview-container {
+  background: #8BBB92;
+  min-height: 280px;
+  height: auto;
+  width: 100%;
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 30px rgba(139, 187, 146, 0.28);
+}
+
+/* ── Toolbar Atas (Pencarian & Aksi Ekspor) ── */
+.data-mhs-toolbar-top {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .data-mhs-toolbar-top {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.data-mhs-search-box {
+  position: relative;
+  min-width: 260px;
+}
+
+.data-mhs-search-box input {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 8px 14px 8px 36px;
+  font-size: 13px;
+  color: #1e293b;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.data-mhs-search-box input:focus {
+  outline: none;
+  border-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.35);
+}
+
+.data-mhs-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  color: #24502d;
+  pointer-events: none;
+}
+
+.data-mhs-actions-area {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn-export-mhs {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease;
+}
+
+.btn-export-mhs:hover {
+  background-color: #f8fafc;
+  color: #0f172a;
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* ── Prodi Tab Pills Horizontal Row ── */
+.data-mhs-prodi-tabs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn-data-mhs-tab {
+  padding: 7px 16px;
+  border-radius: 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+  backdrop-filter: blur(4px);
+}
+
+.btn-data-mhs-tab:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-data-mhs-tab.active {
+  background-color: #ffffff !important;
+  color: #1e3f20 !important;
+  font-weight: 800;
+  border-color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transform: translateY(-1px);
+}
+
+/* ── Kategori Row (Reguler / Beasiswa) ── */
+.data-mhs-kategori-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.data-mhs-kategori-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.data-mhs-kategori-label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.btn-mhs-kategori-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.btn-mhs-kategori-pill:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+}
+
+.btn-mhs-kategori-pill.active {
+  background-color: #ffffff !important;
+  color: #1e3f20 !important;
+  border-color: #ffffff !important;
+  font-weight: 800;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.data-mhs-count-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  padding: 6px 16px;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+}
+
+/* ── Tabel Data Mahasiswa (White Card Container) ── */
+.data-mhs-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 16px;
+  border: 1px solid #eef2f6;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+}
+
+.data-mhs-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 12.5px;
+}
+
+.data-mhs-table th {
+  background-color: #f4fbf5;
+  color: #24502d;
+  font-weight: 700;
+  text-align: left;
+  padding: 11px 14px;
+  border-bottom: 2px solid rgba(139, 187, 146, 0.3);
+  white-space: nowrap;
+}
+
+.data-mhs-table td {
+  padding: 10px 14px;
+  color: #334155;
+  border-bottom: 1px solid #f1f5f9;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.data-mhs-table tbody tr:hover td {
+  background-color: #f7faf8;
+}
+
+.data-mhs-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Badges for student status */
+.badge-status-aktif {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.badge-status-cuti {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  background-color: #fffbeb;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.badge-ipk-high {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+  background-color: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.badge-ipk-mid {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+  background-color: #f8fafc;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+}

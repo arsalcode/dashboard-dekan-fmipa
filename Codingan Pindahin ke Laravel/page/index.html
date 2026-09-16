@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FMIPA - Universitas Pakuan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/dashboard/dashboard.css" />
+  <link rel="stylesheet" href="../css/dashboard/sdm_dosen.css" />
+  <link rel="stylesheet" href="../css/dashboard/sdm_mahasiswa.css" />
+  <link rel="stylesheet" href="../css/dashboard/penelitian_publikasi.css" />
+  <link rel="stylesheet" href="../css/dashboard/keuangan_administrasi.css" />
+  <link rel="stylesheet" href="../css/dashboard/media_sosial.css" />
+  <link rel="stylesheet" href="../css/dashboard/kerjasama_partnership.css" />
+  <link rel="stylesheet" href="../css/dashboard/kemahasiswaan.css" />
+  <link rel="stylesheet" href="../css/dashboard/prodi/prodi.css" />
+  <link rel="stylesheet" href="../css/sidebar.css?v=3" />
+  <link rel="stylesheet" href="../css/setting.css" />
+  <link rel="stylesheet" href="../css/wakil dekan 1/wakil_dekan_1.css" />
+  <link rel="stylesheet" href="../css/wakil dekan 1/ipk_analisis_kelulusan.css" />
+  <link rel="stylesheet" href="../css/wakil dekan 1/retensi_tugas_akhir.css" />
+  <link rel="stylesheet" href="../css/wakil dekan 1/akreditasi_beban_mengajar.css" />
+  <link rel="stylesheet" href="../css/wakil dekan 2/wakil_dekan_2.css" />
+  <link rel="stylesheet" href="../css/wakil dekan 2/overview_anggaran.css" />
+  <link rel="stylesheet" href="../css/wakil dekan 2/komposisi_sumber_manusia.css" />
+  <link rel="stylesheet" href="../css/wakil dekan 2/piramida_usia_dosen.css" />
+  <link rel="stylesheet" href="../css/wakil dekan 2/riwayat_pemasukan_dan_pengeluaran.css" />
+  <link rel="stylesheet" href="../css/wakil dekan 3/wakil_dekan_3.css" />
+  <link rel="stylesheet" href="../css/wakil dekan 3/overview_mahasiswa.css" />
+  <link rel="stylesheet" href="../css/wakil dekan 3/prestasi_dan_kesejahteraan_mahasiswa.css" />
+  <link rel="stylesheet" href="../css/wakil dekan 3/analisis_dan_tren_kemahasiswaan.css" />
+  <link rel="stylesheet" href="../css/dosen/dosen.css" />
+  <link rel="stylesheet" href="../css/dosen/statistik_dosen.css" />
+  <link rel="stylesheet" href="../css/dosen/jabatan_akademik_dosen.css" />
+  <link rel="stylesheet" href="../css/dosen/progress_studi_lanjut_dosen.css" />
+  <link rel="stylesheet" href="../css/dosen/data_dosen_per_prodi.css" />
+  <link rel="stylesheet" href="../css/mahasiswa/mahasiswa.css" />
+  <link rel="stylesheet" href="../css/mahasiswa/statistik_mahasiswa.css" />
+  <link rel="stylesheet" href="../css/mahasiswa/prestasi_mahasiswa.css" />
+  <link rel="stylesheet" href="../css/mahasiswa/progress_studi_mahasiswa.css" />
+  <link rel="stylesheet" href="../css/mahasiswa/data_mahasiswa_per_prodi.css" />
+</head>
+
+<body class="dashboard-page">
+  <div class="flex h-screen overflow-hidden bg-gray-100">
+    <!-- Sidebar Container (Embedded langsung agar tidak terjadi truncation atau delay) -->
+    <div id="sidebarContainer">
+      <aside id="sidebar" class="sidebar fixed md:relative z-50 w-64 h-full flex flex-col min-h-0 shadow-2xl flex-shrink-0 transition-all duration-300 -translate-x-full md:translate-x-0">
+        <style>
+          #sidebar .sidebar-link span.font-medium {
+            color: rgba(255, 255, 255, 0.9) !important;
+            display: inline-block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+          }
+          #sidebar .sidebar-link:not(.active):hover span.font-medium {
+            color: #ffffff !important;
+          }
+          #sidebar .sidebar-link.active,
+          #sidebar .sidebar-dropdown-menu .sidebar-link.active {
+            background-color: #ffffff !important;
+            background: #ffffff !important;
+            color: #722F99 !important;
+          }
+          #sidebar .sidebar-link.active span,
+          #sidebar .sidebar-link.active span.font-medium,
+          #sidebar .sidebar-link.active:hover span.font-medium,
+          #sidebar .sidebar-link.active:focus span.font-medium,
+          #sidebar .sidebar-dropdown-menu .sidebar-link.active span,
+          #sidebar .sidebar-dropdown-menu .sidebar-link.active span.font-medium,
+          #sidebar .sidebar-dropdown-menu .sidebar-link.active:hover span.font-medium,
+          #sidebar .sidebar-dropdown-menu .sidebar-link.active:focus span.font-medium {
+            color: #722F99 !important;
+            font-weight: 700 !important;
+            display: inline-block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+          }
+        </style>
+        
+        <!-- Logo Section - FMIPA Universitas Pakuan -->
+        <div class="px-5 py-5 border-b border-white/10">
+          <div class="flex items-center gap-3">
+            <div class="relative flex-shrink-0">
+              <div id="logoContainer" class="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-white font-bold text-sm shadow-lg overflow-hidden border border-white/20">
+                <img id="logoImage" src="../image/logo/logo_unpak.png" alt="UNPAK Logo" class="w-full h-full object-cover hidden" />
+                <span id="logoFallback" class="text-lg font-extrabold text-white">U</span>
+              </div>
+              <div class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-[#722F99] animate-pulse"></div>
+            </div>
+            <div>
+              <span class="text-[11px] font-bold text-purple-300 uppercase tracking-wider block">FMIPA</span>
+              <span class="text-[13px] font-extrabold text-white tracking-tight">UNIVERSITAS</span>
+              <span class="text-[13px] font-extrabold text-purple-300 tracking-tight block -mt-0.5">PAKUAN</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="px-3 py-4 flex-1 min-h-0 overflow-y-auto">
+          
+          <!-- Dashboard -->
+          <a href="dashboard/dashboard.html" data-page="dashboard/dashboard.html" class="sidebar-link active group flex items-center gap-3 px-3 py-2.5 rounded-xl mb-1 transition-all duration-200" data-color="purple">
+            <div class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition shadow-sm">
+              <i class="fas fa-th-large text-sm"></i>
+            </div>
+            <span class="font-medium text-sm transition">Dashboard</span>
+          </a>
+
+          <!-- Wakil Dekan Dropdown -->
+          <button type="button" class="sidebar-dropdown-toggle w-full flex items-center gap-2 mt-4 mb-2 px-3 py-2 text-left group" aria-expanded="true" aria-controls="wakilDekanMenu">
+            <span class="text-[10px] font-semibold text-purple-300/60 uppercase tracking-wider whitespace-nowrap">WAKIL DEKAN FMIPA</span>
+            <span class="h-[1px] flex-1 bg-white/20 group-hover:bg-white/30 transition-colors"></span>
+            <i class="fas fa-chevron-down text-[10px] text-purple-300/60 transition-transform"></i>
+          </button>
+
+          <div id="wakilDekanMenu" class="sidebar-dropdown-menu" data-open="true">
+            <!-- Akademik -->
+            <a href="wakil%20dekan%201/wakil_dekan_1.html" data-page="wakil%20dekan%201/wakil_dekan_1.html" class="sidebar-link group flex items-center gap-3 px-3 py-2.5 rounded-xl mb-1 transition-all duration-200" data-color="purple">
+              <div class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition shadow-sm">
+                <i class="fas fa-graduation-cap text-sm"></i>
+              </div>
+              <span class="font-medium text-sm transition">Wakil Dekan : Bidang Akademik</span>
+            </a>
+
+            <!-- Keuangan & SDM -->
+            <a href="wakil%20dekan%202/wakil_dekan_2.html" data-page="wakil%20dekan%202/wakil_dekan_2.html" class="sidebar-link group flex items-center gap-3 px-3 py-2.5 rounded-xl mb-1 transition-all duration-200" data-color="purple">
+              <div class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition shadow-sm">
+                <i class="fas fa-wallet text-sm"></i>
+              </div>
+              <span class="font-medium text-sm transition">Wakil Dekan : Bidang Keuangan & SDM</span>
+            </a>
+
+            <!-- Kemahasiswaan -->
+            <a href="wakil%20dekan%203/wakil_dekan_3.html" data-page="wakil%20dekan%203/wakil_dekan_3.html" class="sidebar-link group flex items-center gap-3 px-3 py-2.5 rounded-xl mb-1 transition-all duration-200" data-color="purple">
+              <div class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition shadow-sm">
+                <i class="fas fa-users text-sm"></i>
+              </div>
+              <span class="font-medium text-sm transition">Wakil Dekan : Bidang Kemahasiswaan</span>
+            </a>
+          </div>
+
+          <!-- Data Operasional Dropdown -->
+          <button type="button" class="sidebar-dropdown-toggle w-full flex items-center gap-2 mt-4 mb-2 px-3 py-2 text-left group" aria-expanded="true" aria-controls="dataOperasionalMenu">
+            <span class="text-[10px] font-semibold text-purple-300/60 uppercase tracking-wider whitespace-nowrap">DATA OPERASIONAL</span>
+            <span class="h-[1px] flex-1 bg-white/20 group-hover:bg-white/30 transition-colors"></span>
+            <i class="fas fa-chevron-down text-[10px] text-purple-300/60 transition-transform"></i>
+          </button>
+
+          <div id="dataOperasionalMenu" class="sidebar-dropdown-menu" data-open="true">
+            <!-- Dosen -->
+            <a href="dosen/dosen.html" data-page="dosen/dosen.html" class="sidebar-link group flex items-center gap-3 px-3 py-2.5 rounded-xl mb-1 transition-all duration-200" data-color="purple">
+              <div class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition shadow-sm">
+                <i class="fas fa-id-card text-sm"></i>
+              </div>
+              <span class="font-medium text-sm transition">Dosen</span>
+            </a>
+
+            <!-- Mahasiswa -->
+            <a href="mahasiswa/mahasiswa.html" data-page="mahasiswa/mahasiswa.html" class="sidebar-link group flex items-center gap-3 px-3 py-2.5 rounded-xl mb-1 transition-all duration-200" data-color="purple">
+              <div class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition shadow-sm">
+                <i class="fas fa-user-friends text-sm"></i>
+              </div>
+              <span class="font-medium text-sm transition">Mahasiswa</span>
+            </a>
+
+            <!-- Kurikulum -->
+            <a href="kurikulum/kurikulum.html" data-page="kurikulum/kurikulum.html" class="sidebar-link group flex items-center gap-3 px-3 py-2.5 rounded-xl mb-1 transition-all duration-200" data-color="purple">
+              <div class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition shadow-sm">
+                <i class="fas fa-book-open text-sm"></i>
+              </div>
+              <span class="font-medium text-sm transition">Kurikulum</span>
+            </a>
+          </div>
+
+          <!-- Settings -->
+          <a href="setting.html" data-page="setting.html" class="sidebar-link group flex items-center gap-3 px-3 py-2.5 rounded-xl mb-1 transition-all duration-200" data-color="purple">
+            <div class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition shadow-sm">
+              <i class="fas fa-cog text-sm"></i>
+            </div>
+            <span class="font-medium text-sm transition">Settings</span>
+          </a>
+
+          <!-- Logout -->
+          <a href="#" class="sidebar-link group flex items-center gap-3 px-3 py-2.5 rounded-xl mb-1 transition-all duration-200" data-color="purple">
+            <div class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition shadow-sm">
+              <i class="fas fa-sign-out-alt text-sm"></i>
+            </div>
+            <span class="font-medium text-sm transition">Logout</span>
+          </a>
+
+        </nav>
+
+        <!-- Footer Sidebar - User Profile -->
+        <div class="p-4 border-t border-white/10 bg-white/5 backdrop-blur-sm">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white font-semibold text-sm shadow-lg shadow-purple-500/20 border border-white/20">
+              A
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-medium text-white truncate">Admin User</p>
+              <p class="text-xs text-purple-300 truncate">admin@unpak.ac.id</p>
+            </div>
+            <button id="sidebarToggleMobile" class="md:hidden w-7 h-7 rounded-lg hover:bg-white/10 flex items-center justify-center text-white/60 hover:text-white transition">
+              <i class="fas fa-times text-sm"></i>
+            </button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    
+    <!-- Dashboard Content Container -->
+    <div id="dashboardContainer" class="flex-1 flex flex-col min-w-0"></div>
+  </div>
+
+  <script>
+    fetch('dashboard/dashboard.html?v=' + Date.now(), { cache: 'no-store' })
+      .then(response => response.text())
+      .then(dashboard => {
+        document.getElementById('dashboardContainer').innerHTML = dashboard;
+        const script = document.createElement('script');
+        script.src = '../js/script.js?v=' + Date.now();
+        document.body.appendChild(script);
+      })
+      .catch(() => {
+        document.getElementById('dashboardContainer').innerHTML = '<p class="p-8 text-red-600">Dashboard gagal dimuat.</p>';
+      });
+  </script>
+</body>
+
+</html>

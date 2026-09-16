@@ -1,0 +1,187 @@
+<!-- ============================================ -->
+<!-- SEKSI: STATISTIK DOSEN -->
+<!-- ============================================ -->
+<div class="section-statistik-dosen">
+  
+  <!-- Header Title & Subtitle Bergaya Wakil Dekan 1 -->
+  <div class="dashboard-content-inner px-0 pt-0 pb-2">
+    <div class="content-left flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-[#2d6a4f] shadow-sm">
+        <i class="fas fa-chart-pie text-lg"></i>
+      </div>
+      <div class="content-title-wrapper">
+        <h1 class="text-xl font-bold text-gray-800">Statistik Dosen</h1>
+        <div class="content-underline"></div>
+      </div>
+    </div>
+  </div>
+  <p class="dosen-header-subtitle mb-4">
+    Overview data dosen berdasarkan jabatan, sertifikasi, dan pendidikan — mengikuti filter Prodi, Status, dan Periode di atas
+  </p>
+
+  <!-- Banner Pemberitahuan Status (Aksen Ungu Sesuai Tema Wakil Dekan) -->
+  <div class="dosen-alert-banner">
+    <div class="dosen-alert-content">
+      <div class="dosen-alert-icon">
+        <i class="fas fa-info"></i>
+      </div>
+      <div class="dosen-alert-text">
+        <strong>Status Saat Ini:</strong> Statistik berdasarkan data riwayat periode terkini (Pensiun &amp; Meninggal dikecualikan secara default). Untuk melihat data pensiun, gunakan filter <strong>"Status Dosen: Pensiun"</strong> di atas.
+      </div>
+    </div>
+  </div>
+
+  <!-- Container Pembungkus Ungu (#722F99) Persis Sesuai Gambar Screenshot -->
+  <div class="card-bg">
+    <div class="dosen-overview-container">
+
+      <!-- 4 Kartu Metrik Utama (Top Row) -->
+      <div class="dosen-stat-metrics-grid">
+        <!-- Card 1: Total Dosen (Palette 1: Navy Blue) -->
+        <div class="dosen-metric-card metric-palette-1">
+          <div class="dosen-metric-header">
+            <span class="dosen-metric-title">Total Dosen</span>
+            <button type="button" class="dosen-metric-info-btn" title="Total keseluruhan dosen aktif dan terdaftar">
+              <i class="fas fa-info-circle"></i>
+            </button>
+          </div>
+          <div class="dosen-metric-body">
+            <span class="dosen-metric-value" id="valDosenTotal">156</span>
+          </div>
+          <div class="dosen-metric-footer">
+            <span class="dosen-metric-subtext" id="subDosenTotal">Tahun 2026</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Dosen Bersertifikat (Palette 2: Dark Slate Blue) -->
+        <div class="dosen-metric-card metric-palette-2">
+          <div class="dosen-metric-header">
+            <span class="dosen-metric-title">Dosen Bersertifikat</span>
+            <button type="button" class="dosen-metric-info-btn" title="Persentase dan jumlah dosen bersertifikasi pendidik">
+              <i class="fas fa-info-circle"></i>
+            </button>
+          </div>
+          <div class="dosen-metric-body">
+            <span class="dosen-metric-value" id="valDosenSertifPersen">72%</span>
+          </div>
+          <div class="dosen-metric-footer">
+            <span class="dosen-metric-subtext" id="subDosenSertifCount">112 Bersertifikat</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Guru Besar (Palette 3: Teal) -->
+        <div class="dosen-metric-card metric-palette-3">
+          <div class="dosen-metric-header">
+            <span class="dosen-metric-title">Guru Besar</span>
+            <button type="button" class="dosen-metric-info-btn" title="Jumlah dosen dengan jabatan fungsional Guru Besar">
+              <i class="fas fa-info-circle"></i>
+            </button>
+          </div>
+          <div class="dosen-metric-body">
+            <span class="dosen-metric-value" id="valDosenGuruBesar">4</span>
+          </div>
+          <div class="dosen-metric-footer">
+            <span class="dosen-metric-subtext" id="subDosenGuruBesar">Jabatan Tertinggi</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Doktor S3 (Palette 4: Mustard Yellow) -->
+        <div class="dosen-metric-card metric-palette-4">
+          <div class="dosen-metric-header">
+            <span class="dosen-metric-title">Strata S3 (Doktor)</span>
+            <button type="button" class="dosen-metric-info-btn" title="Jumlah dosen dengan kualifikasi pendidikan S3 Doktor">
+              <i class="fas fa-info-circle"></i>
+            </button>
+          </div>
+          <div class="dosen-metric-body">
+            <span class="dosen-metric-value" id="valDosenS3">52</span>
+          </div>
+          <div class="dosen-metric-footer">
+            <span class="dosen-metric-subtext" id="subDosenS3">33.3% dari Total</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 Kartu Grafik Grid (Bottom Row) -->
+      <div class="dosen-charts-grid">
+        <!-- Grafik 1: Distribusi Jabatan Akademik (Bar Chart) -->
+        <div class="dosen-chart-card">
+          <div class="dosen-chart-header">
+            <div class="dosen-header-spacer"></div>
+            <h4 class="dosen-chart-title">Distribusi Jabatan Akademik</h4>
+            <button type="button" class="dosen-chart-info-btn" title="Sebaran jenjang jabatan fungsional akademik dosen">
+              <i class="fas fa-info-circle"></i>
+            </button>
+          </div>
+          <div class="dosen-chart-legend">
+            <div class="dosen-legend-item">
+              <span class="dosen-legend-box" style="background:#0D0B61"></span>
+              <span>Asisten Ahli</span>
+            </div>
+            <div class="dosen-legend-item">
+              <span class="dosen-legend-box" style="background:#294669"></span>
+              <span>Lektor</span>
+            </div>
+            <div class="dosen-legend-item">
+              <span class="dosen-legend-box" style="background:#3D818A"></span>
+              <span>Lektor Kepala</span>
+            </div>
+            <div class="dosen-legend-item">
+              <span class="dosen-legend-box" style="background:#E5D026"></span>
+              <span>Guru Besar</span>
+            </div>
+            <div class="dosen-legend-item">
+              <span class="dosen-legend-box" style="background:#8BBB92"></span>
+              <span>Tenaga Pengajar</span>
+            </div>
+          </div>
+          <div class="dosen-chart-body">
+            <canvas id="chartDosenJabatan"></canvas>
+          </div>
+          <div class="dosen-chart-footer-note">
+            <span id="footerGuruBesarDosen">Guru Besar: 4 dosen</span>
+          </div>
+        </div>
+
+        <!-- Grafik 2: Status Keaktifan & Strata Pendidikan (Doughnut / Dual Chart) -->
+        <div class="dosen-chart-card">
+          <div class="dosen-chart-header">
+            <div class="dosen-header-spacer"></div>
+            <h4 class="dosen-chart-title">Status Keaktifan &amp; Pendidikan</h4>
+            <button type="button" class="dosen-chart-info-btn" title="Proporsi status keaktifan dan jenjang pendidikan dosen">
+              <i class="fas fa-info-circle"></i>
+            </button>
+          </div>
+          <div class="dosen-chart-tab-pills">
+            <button type="button" class="dosen-chart-tab-pill active" id="tabChartStatus" data-chart-view="status">Status Dosen</button>
+            <button type="button" class="dosen-chart-tab-pill" id="tabChartPendidikan" data-chart-view="pendidikan">Strata Pendidikan</button>
+            <button type="button" class="dosen-chart-tab-pill" id="tabChartSertifikasi" data-chart-view="sertifikasi">Sertifikasi</button>
+          </div>
+          
+          <div class="dosen-chart-body">
+            <div id="viewWrapStatus" class="dosen-chart-canvas-view active">
+              <canvas id="chartDosenStatus"></canvas>
+            </div>
+            <div id="viewWrapPendidikan" class="dosen-chart-canvas-view">
+              <canvas id="chartDosenPendidikan"></canvas>
+            </div>
+            <div id="viewWrapSertifikasi" class="dosen-chart-canvas-view">
+              <canvas id="chartDosenSertifikasi"></canvas>
+            </div>
+          </div>
+
+          <div class="dosen-chart-footer-note flex justify-between items-center text-xs text-slate-500">
+            <span id="footerTotalDosen">Total: 156 dosen</span>
+            <span id="footerS3Dosen">S3: 52 dosen</span>
+            <span id="footerSertifikasiDosen">72% bersertifikat</span>
+            <!-- Hidden counts needed by script.js -->
+            <span style="display:none;" id="countSertifYa">112</span>
+            <span style="display:none;" id="countSertifTidak">44</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

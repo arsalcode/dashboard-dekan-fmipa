@@ -1,0 +1,75 @@
+<!-- Section: Kemahasiswaan · Kimia -->
+<div class="section-kemahasiswaan">
+    <div class="dashboard-content-inner">
+        <div class="content-left">
+            <i class="fas fa-trophy content-icon"></i>
+            <div class="content-title-wrapper">
+                <h1>Kemahasiswaan & Prestasi</h1>
+                <div class="content-underline"></div>
+            </div>
+        </div>
+    </div>
+    <div class="card-bg">
+        <div class="card-bg-fix">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-5 w-full">
+                <div class="metric-card-kemahasiswaan metric-palette-1">
+                    <div class="metric-card-header">
+                        <span class="metric-card-title">Total Partisipasi</span>
+                        <button type="button" class="metric-info-btn" title="Informasi Total Partisipasi"><i class="fas fa-info"></i></button>
+                    </div>
+                    <div class="metric-card-body">
+                        <span class="metric-main-value" id="valTotalPartisipasi">64</span>
+                    </div>
+                    <div class="metric-card-footer">
+                        <span class="metric-subtext" id="subTotalPartisipasi">Event & Kompetisi Terdaftar</span>
+                    </div>
+                </div>
+                <div class="metric-card-kemahasiswaan metric-palette-3">
+                    <div class="metric-card-header">
+                        <span class="metric-card-title">Mahasiswa Beasiswa</span>
+                        <button type="button" class="metric-info-btn" title="Informasi Mahasiswa Penerima Beasiswa"><i class="fas fa-info"></i></button>
+                    </div>
+                    <div class="metric-card-body">
+                        <span class="metric-main-value" id="valMahasiswaBeasiswa">35</span>
+                    </div>
+                    <div class="metric-card-footer">
+                        <span class="metric-subtext" id="subMahasiswaBeasiswa">12.5% dari total mahasiswa</span>
+                    </div>
+                </div>
+                <div class="metric-card-kemahasiswaan metric-palette-4">
+                    <div class="metric-card-header">
+                        <span class="metric-card-title">Prestasi Mahasiswa</span>
+                        <button type="button" class="metric-info-btn" title="Informasi Prestasi Mahasiswa"><i class="fas fa-info"></i></button>
+                    </div>
+                    <div class="metric-card-body">
+                        <span class="metric-main-value" id="valPrestasiMahasiswa">10</span>
+                    </div>
+                    <div class="metric-card-footer">
+                        <span class="metric-subtext" id="subPrestasiMahasiswa">2 internasional | 8 nasional</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 w-full">
+                <div class="chart-card-kemahasiswaan">
+                    <div class="chart-card-header mb-1">
+                        <h3 class="chart-title">Tren Partisipasi per Tahun</h3>
+                        <span class="chart-info-badge">i</span>
+                    </div>
+                    <div class="flex flex-wrap items-center justify-center gap-3 mb-2 text-[11px] font-semibold text-gray-600">
+                        <div class="flex items-center gap-1.5"><span class="w-3 border-t-2 border-[#38bdf8] inline-block"></span><span>Mahasiswa</span></div>
+                        <div class="flex items-center gap-1.5"><span class="w-3 border-t-2 border-[#ec4899] inline-block"></span><span>Dosen</span></div>
+                        <div class="flex items-center gap-1.5"><span class="w-3 border-t-2 border-dashed border-[#3D818A] inline-block"></span><span>Total Partisipan</span></div>
+                    </div>
+                    <div class="chart-canvas-wrapper"><canvas id="chartTrenPartisipasi"></canvas></div>
+                </div>
+                <div class="chart-card-kemahasiswaan">
+                    <div class="chart-card-header mb-1">
+                        <h3 class="chart-title">Distribusi Tipe Event (Tahun 2026)</h3>
+                        <span class="chart-info-badge">i</span>
+                    </div>
+                    <div class="chart-canvas-wrapper"><canvas id="chartTipeEvent"></canvas></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

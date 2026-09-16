@@ -1,0 +1,68 @@
+/* ============================================
+   SDM DOSEN SECTION STYLES (Palette Theme)
+   Palette: #0D0B61 | #294669 | #3D818A | #E5D026
+   ============================================ */
+
+.section-sdm-dosen {
+    margin-bottom: 32px;
+}
+
+.section-sdm-dosen .card-bg-fix {
+    background: #722F99;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-height: 280px;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.section-sdm-dosen .card {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.section-sdm-dosen .card-icon-navy {
+    background: rgba(114, 47, 153, 0.12);
+    color: #722F99;
+}
+
+.section-sdm-dosen .card-icon-teal {
+    background: rgba(114, 47, 153, 0.12);
+    color: #722F99;
+}
+
+/* Metric Cards for SDM Dosen */
+.metric-card-dosen {
+    border-radius: 18px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 140px;
+    background: #722F99;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card-dosen:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+.metric-card-dosen.metric-palette-1,
+.metric-card-dosen.metric-palette-2,
+.metric-card-dosen.metric-palette-3,
+.metric-card-dosen.metric-palette-4 {
+    background: #722F99;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}

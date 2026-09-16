@@ -1,0 +1,235 @@
+/* ============================================
+   WAKIL DEKAN 2 - RIWAYAT PEMASUKAN & PENGELUARAN
+   Tema Hijau Sage (#8BBB92) & 4 Palette Dashboard
+   ============================================ */
+
+/* ── Section Wrapper ── */
+.section-riwayat-kas {
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.section-riwayat-kas .card-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* ── Container Dalam — Sama dengan Dashboard (#8BBB92) ── */
+.riwayat-kas-container {
+  background: #8BBB92;
+  min-height: 280px;
+  height: auto;
+  width: 100%;
+  max-width: 960px;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+/* ── Grid 4 Kartu Metrik Arus Kas ── */
+.wd2-kas-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .wd2-kas-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .wd2-kas-stat-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ── Kartu Metrik Arus Kas — Patokan Ukuran & Shadow Dashboard ── */
+.wd2-kas-card {
+  position: relative;
+  border-radius: 18px;
+  padding: 18px 20px;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 140px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.wd2-kas-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+/* 1. Palette 1 (#0D0B61 - Navy Blue) */
+.wd2-kas-card.metric-palette-1 {
+  background: #0D0B61;
+  border: none;
+}
+
+/* 2. Palette 2 (#294669 - Dark Slate Blue) */
+.wd2-kas-card.metric-palette-2 {
+  background: #294669;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* 3. Palette 3 (#3D818A - Teal) */
+.wd2-kas-card.metric-palette-3 {
+  background: #3D818A;
+  border: none;
+}
+
+/* 4. Palette 4 (#E5D026 - Mustard Yellow) */
+.wd2-kas-card.metric-palette-4 {
+  background: #E5D026;
+  border: none;
+}
+
+.wd2-kas-card.metric-palette-4 .wd2-card-title,
+.wd2-kas-card.metric-palette-4 .wd2-card-value,
+.wd2-kas-card.metric-palette-4 .wd2-card-subtext {
+  color: #0D0B61;
+  text-shadow: none;
+}
+
+.wd2-kas-card.metric-palette-4 .wd2-card-info-btn {
+  background: rgba(13, 11, 97, 0.15);
+  color: #0D0B61;
+  border-color: rgba(13, 11, 97, 0.25);
+}
+
+/* ── Grid 2 Kartu Grafik Arus Kas ── */
+.wd2-kas-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .wd2-kas-charts-grid {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.wd2-kas-chart-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px 22px;
+  border: 1px solid #eef2f6;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.wd2-kas-chart-card .wd2-chart-body {
+  position: relative;
+  width: 100%;
+  height: 260px;
+}
+
+/* ── Kartu Tabel Riwayat Transaksi ── */
+.wd2-kas-table-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px 24px;
+  border: 1px solid #eef2f6;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.wd2-kas-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.wd2-kas-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+  text-align: left;
+}
+
+.wd2-kas-table th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 14px;
+  border-bottom: 1.5px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.wd2-kas-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  vertical-align: middle;
+}
+
+.wd2-kas-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.wd2-kas-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.wd2-kas-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Badge Tipe Transaksi */
+.badge-pemasukan {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.badge-pengeluaran {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.badge-status-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  background: #f1f5f9;
+  color: #475569;
+}

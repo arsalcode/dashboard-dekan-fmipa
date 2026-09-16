@@ -1,0 +1,203 @@
+/* ============================================
+   PENELITIAN & PUBLIKASI SECTION STYLES (Palette Theme)
+   Palette: #0D0B61 | #294669 | #3D818A | #E5D026
+   ============================================ */
+
+.section-penelitian-publikasi {
+    margin-bottom: 32px;
+}
+
+.section-penelitian-publikasi .card-bg-fix {
+    background: #8BBB92;
+    min-height: 280px;
+    height: auto;
+    width: 100%;
+    max-width: 960px;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+/* --- METRIC CARDS (Palette) --- */
+.metric-card-penelitian {
+    border-radius: 18px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 140px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card-penelitian:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+.metric-card-penelitian.metric-palette-1 {
+    background: #0D0B61;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.metric-card-penelitian.metric-palette-2 {
+    background: #294669;
+}
+
+.metric-card-penelitian.metric-palette-3 {
+    background: #3D818A;
+}
+
+.metric-card-penelitian.metric-palette-4 {
+    background: #E5D026;
+}
+
+/* Metric Card Header */
+.metric-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.metric-card-title {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: 0.2px;
+}
+
+.metric-info-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(4px);
+}
+
+.metric-info-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+/* Metric Card Body */
+.metric-card-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0;
+}
+
+.metric-main-value {
+    font-size: 38px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Metric Card Footer */
+.metric-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.metric-subtext {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Adjustments for Palette 4 (Yellow Card) */
+.metric-card-penelitian.metric-palette-4 .metric-card-title,
+.metric-card-penelitian.metric-palette-4 .metric-main-value,
+.metric-card-penelitian.metric-palette-4 .metric-subtext {
+    color: #0D0B61;
+    text-shadow: none;
+}
+
+.metric-card-penelitian.metric-palette-4 .metric-info-btn {
+    background: rgba(13, 11, 97, 0.15);
+    color: #0D0B61;
+}
+
+/* --- CHART CARDS (2 White Cards) --- */
+.chart-card-penelitian {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px 18px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chart-card-penelitian:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-color: #e2e8f0;
+}
+
+.chart-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.chart-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #334155;
+    letter-spacing: -0.2px;
+    text-align: center;
+}
+
+.chart-info-badge {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #dbeafe;
+    color: #0D0B61;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.chart-canvas-wrapper {
+    width: 100%;
+    height: 220px;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .metric-main-value {
+        font-size: 30px;
+    }
+    .chart-canvas-wrapper {
+        height: 190px;
+    }
+}

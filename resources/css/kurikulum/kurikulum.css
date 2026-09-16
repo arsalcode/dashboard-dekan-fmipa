@@ -1,0 +1,434 @@
+/* ============================================
+   KURIKULUM & MATA KULIAH FMIPA UNIVERSITAS PAKUAN
+   Modular Stylesheet • Standar Eksekutif Dosen & Dekan
+   ============================================ */
+
+/* Signature Section Architecture */
+.section-kurikulum {
+  margin-bottom: 3rem;
+}
+
+.section-kurikulum .card-bg-fix {
+  background: #722F99;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 20px 25px -5px rgba(58, 18, 81, 0.25), 0 8px 10px -6px rgba(58, 18, 81, 0.25);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .section-kurikulum .card-bg {
+    margin-top: 100px !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* ============================================
+   CUSTOM PILL DROPDOWNS (ROYAL PURPLE THEME)
+   ============================================ */
+.kurl-filter-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #e9d5ff; /* purple-200 */
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  flex-shrink: 0;
+  letter-spacing: 0.025em;
+}
+
+.kurl-dropdown-wrap {
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+}
+
+.kurl-dropdown-wrap.open {
+  z-index: 50;
+}
+
+.kurl-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  color: #ffffff !important;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.375rem 0.875rem !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.kurl-pill-btn:hover {
+  background: rgba(255, 255, 255, 0.24) !important;
+  border-color: rgba(255, 255, 255, 0.40) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.kurl-pill-btn:focus,
+.kurl-dropdown-wrap.open .kurl-pill-btn {
+  outline: none;
+  background: rgba(255, 255, 255, 0.24) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow: 0 0 0 2px rgba(253, 224, 71, 0.35) !important;
+  color: #ffffff !important;
+}
+
+.kurl-pill-btn .chevron-icon {
+  font-size: 0.65rem;
+  color: #e9d5ff !important;
+  transition: transform 0.2s ease, color 0.2s ease;
+  margin-left: 2px;
+}
+
+.kurl-dropdown-wrap.open .chevron-icon {
+  transform: rotate(180deg);
+  color: #ffffff !important;
+}
+
+.kurl-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 190px;
+  width: max-content;
+  max-width: 270px;
+  max-height: 280px;
+  overflow-y: auto;
+  background: rgba(45, 12, 65, 0.96) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45) !important;
+  padding: 6px;
+  z-index: 100;
+  display: none;
+}
+
+.kurl-dropdown-wrap.open .kurl-dropdown-menu {
+  display: block;
+}
+
+.kurl-dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  background: transparent;
+  border: 1px solid transparent;
+  text-align: left;
+}
+
+.kurl-dropdown-item:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  font-weight: 600;
+  padding-left: 17px;
+}
+
+.kurl-dropdown-item.active {
+  background: #ffffff !important;
+  color: #722F99 !important;
+  border-color: #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.20) !important;
+}
+
+.kurl-dropdown-item.active::after {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 11px;
+  color: #722F99;
+  margin-left: 10px;
+}
+
+#wrapFilterKurlStatus .kurl-dropdown-menu,
+#wrapCompactFilterKurlStatus .kurl-dropdown-menu {
+  left: auto !important;
+  right: 0 !important;
+}
+
+/* Reset Filter Button */
+.kurl-filter-reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.375rem 0.875rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.kurl-filter-reset:hover {
+  background: rgba(255, 255, 255, 0.32);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   STICKY COMPACT FLOATING HEADER
+   ============================================ */
+#compactStickyBarKurikulum {
+  position: sticky;
+  top: 0.75rem;
+  z-index: 45;
+  height: 0;
+  overflow: visible;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-12px);
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#compactStickyBarKurikulum.is-active {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   PRODI TABS & KATEGORI PILLS (STANDAR DOSEN)
+   ============================================ */
+.btn-data-prodi-tab {
+  padding: 8px 16px;
+  border-radius: 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  flex-shrink: 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.btn-data-prodi-tab:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-data-prodi-tab.active {
+  background: #ffffff !important;
+  color: #722F99 !important;
+  font-weight: 700 !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn-data-kategori-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.btn-data-kategori-pill:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-data-kategori-pill.active {
+  background: #ffffff !important;
+  color: #722F99 !important;
+  font-weight: 700 !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn-data-kategori-pill.active i {
+  color: #722F99 !important;
+}
+
+.btn-data-kategori-pill:not(.active) i {
+  color: #fde047 !important;
+}
+
+/* Search input on purple container */
+.search-kurl-input {
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 2.25rem;
+  font-size: 0.8125rem;
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border-radius: 0.75rem !important;
+  color: #ffffff !important;
+  transition: all 0.2s ease;
+}
+
+.search-kurl-input::placeholder {
+  color: rgba(233, 213, 255, 0.7) !important;
+}
+
+.search-kurl-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.20) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow: 0 0 0 2px rgba(253, 224, 71, 0.35) !important;
+}
+
+/* Export Buttons (Standar Dosen) */
+.btn-export-kurl {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border-radius: 0.75rem !important;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff !important;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
+}
+
+.btn-export-kurl:hover {
+  background: rgba(255, 255, 255, 0.24) !important;
+  border-color: rgba(255, 255, 255, 0.40) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.btn-export-kurl i {
+  color: #fde047 !important;
+}
+
+/* ============================================
+   CHART TAB PILLS (STANDAR DOSEN)
+   ============================================ */
+.kurl-chart-tab-pills {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #f1f5f9;
+  padding: 3px;
+  border-radius: 0.5rem;
+}
+
+.kurl-chart-tab-pill {
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  border-radius: 0.375rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.kurl-chart-tab-pill:hover:not(.active) {
+  color: #334155;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.kurl-chart-tab-pill.active {
+  color: #ffffff;
+  background: #722F99;
+  box-shadow: 0 1px 3px rgba(114, 47, 153, 0.3);
+}
+
+.kurl-chart-canvas-view {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.kurl-chart-canvas-view.active {
+  display: block;
+}
+
+/* ============================================
+   MODALS
+   ============================================ */
+.kurl-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.kurl-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.kurl-modal-dialog {
+  background: #ffffff;
+  border-radius: 1.25rem;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid #e2e8f0;
+  transform: translateY(12px) scale(0.98);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.kurl-modal.open .kurl-modal-dialog {
+  transform: translateY(0) scale(1);
+}

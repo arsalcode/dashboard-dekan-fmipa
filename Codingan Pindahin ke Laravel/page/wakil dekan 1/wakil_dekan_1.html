@@ -1,0 +1,117 @@
+<!-- Top Navbar -->
+<header
+    class="bg-white/80 backdrop-blur-sm border-b border-gray-200/60 px-4 sm:px-6 py-3 flex items-center justify-between sticky top-0 z-40">
+    <div class="flex items-center gap-3">
+        <button id="sidebarToggle"
+            class="md:hidden w-9 h-9 rounded-xl hover:bg-gray-100 flex items-center justify-center text-gray-600 transition"
+            aria-label="Buka menu">
+            <i class="fas fa-bars text-lg"></i>
+        </button>
+        <h1 class="md:hidden text-sm font-bold text-gray-800">FMIPA UNPAK</h1>
+    </div>
+    <div class="flex items-center gap-4">
+        <span class="text-sm text-gray-500 hidden sm:inline">Welcome back, Admin</span>
+        <div
+            class="w-9 h-9 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center text-white font-semibold text-sm shadow-md">
+            A</div>
+    </div>
+</header>
+
+<!-- Dashboard Content -->
+<div class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
+    <div class="mb-4">
+        <h2 class="text-2xl font-bold text-gray-800">Wakil Dekan Bidang Akademik</h2>
+        <p class="text-gray-500 text-sm mt-1">FMIPA Universitas Pakuan · Overview</p>
+    </div>
+
+    <!-- Header Filter Bar (Persis Desain Figma) -->
+    <div class="wd1-figma-header-container mb-0">
+        <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-4 w-full">
+            
+            <!-- Sisi Kiri: Bentuk Ungu dengan Lengkungan Kanan Atas & Tab Prodi -->
+            <div class="wd1-purple-block">
+                <div class="filter-left wd1-prodi-grid flex flex-wrap items-center gap-2 sm:gap-2.5">
+                    <button class="filter-tab wd1-tab active group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-semibold transition-all duration-200 shadow-sm backdrop-blur-sm" data-wd1-prodi="semua">
+                        <i class="fas fa-layer-group text-[11px] opacity-80 group-hover:scale-110 transition-transform"></i>
+                        <span>Semua</span>
+                    </button>
+                    <button class="filter-tab wd1-tab group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-semibold transition-all duration-200 shadow-sm backdrop-blur-sm" data-wd1-prodi="biologi">
+                        <i class="fas fa-dna text-[11px] opacity-80 group-hover:scale-110 transition-transform"></i>
+                        <span>Biologi</span>
+                    </button>
+                    <button class="filter-tab wd1-tab group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-semibold transition-all duration-200 shadow-sm backdrop-blur-sm" data-wd1-prodi="kimia">
+                        <i class="fas fa-flask text-[11px] opacity-80 group-hover:scale-110 transition-transform"></i>
+                        <span>Kimia</span>
+                    </button>
+                    <button class="filter-tab wd1-tab group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-semibold transition-all duration-200 shadow-sm backdrop-blur-sm" data-wd1-prodi="matematika">
+                        <i class="fas fa-calculator text-[11px] opacity-80 group-hover:scale-110 transition-transform"></i>
+                        <span>Matematika</span>
+                    </button>
+                    <button class="filter-tab wd1-tab group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-semibold transition-all duration-200 shadow-sm backdrop-blur-sm" data-wd1-prodi="ilmu-komputer">
+                        <i class="fas fa-laptop-code text-[11px] opacity-80 group-hover:scale-110 transition-transform"></i>
+                        <span>Ilmu Komputer</span>
+                    </button>
+                    <button class="filter-tab wd1-tab group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-semibold transition-all duration-200 shadow-sm backdrop-blur-sm" data-wd1-prodi="farmasi">
+                        <i class="fas fa-pills text-[11px] opacity-80 group-hover:scale-110 transition-transform"></i>
+                        <span>Farmasi</span>
+                    </button>
+                    <button class="filter-tab wd1-tab group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-semibold transition-all duration-200 shadow-sm backdrop-blur-sm" data-wd1-prodi="ppa">
+                        <i class="fas fa-mortar-pestle text-[11px] opacity-80 group-hover:scale-110 transition-transform"></i>
+                        <span>Profesi Apoteker</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sisi Kanan: Latar Putih dengan 3 Filter Dropdown (Tahun, Angkatan, Status Mhs) -->
+            <div class="wd1-right-dropdowns-area">
+                <!-- Baris 1: Tahun & Angkatan -->
+                <div class="flex items-center gap-2.5 justify-start lg:justify-end flex-wrap mb-3">
+                    <div class="wd1-select-pill-wrap group">
+                        <span class="wd1-pill-icon-badge">
+                            <i class="fas fa-calendar-alt"></i>
+                        </span>
+                        <select id="filterTahunWd1" class="wd1-select-pill" title="Pilih Tahun">
+                            <option value="2026">2026</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                        </select>
+                    </div>
+                    <div class="wd1-select-pill-wrap group">
+                        <span class="wd1-pill-icon-badge">
+                            <i class="fas fa-user-graduate"></i>
+                        </span>
+                        <select id="filterAngkatanWd1" class="wd1-select-pill" title="Pilih Angkatan">
+                            <option value="semua">Semua Angkatan</option>
+                            <option value="2025">Angkatan 2025</option>
+                            <option value="2024">Angkatan 2024</option>
+                            <option value="2023">Angkatan 2023</option>
+                            <option value="2022">Angkatan 2022</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Baris 2: Status Mahasiswa (Aktif, Lulus, Cuti, Drop Out) -->
+                <div class="flex justify-start lg:justify-end">
+                    <div class="wd1-select-pill-wrap group">
+                        <span class="wd1-pill-icon-badge">
+                            <i class="fas fa-id-badge"></i>
+                        </span>
+                        <select id="filterStatusMhsWd1" class="wd1-select-pill" title="Pilih Status Mahasiswa">
+                            <option value="semua">Semua Status Mhs</option>
+                            <option value="aktif">✓ Aktif</option>
+                            <option value="lulus">🎓 Lulus</option>
+                            <option value="cuti">⏸ Cuti</option>
+                            <option value="dropout">✕ Drop Out</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Sections Container (Card Putih yang Meng-overlap Bagian Bawah Shape Ungu) -->
+    <div id="wd1Sections" class="wd1-overlapping-content">
+        <!-- Sections loaded dynamically: ipk_analisis_kelulusan.html, retensi_tugas_akhir.html, akreditasi_beban_mengajar.html -->
+    </div>
+</div>

@@ -1,0 +1,312 @@
+/* ============================================
+   WAKIL DEKAN 1 - RETENSI & PROGRES TUGAS AKHIR
+   Tema Gradien Vibrant & Analisis Tugas Akhir
+   ============================================ */
+
+/* ── Section wrapper ── */
+.section-retensi-tugas-akhir {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+/* ── Background container — sama dengan .card-bg-fix milik Dashboard (#722F99) ── */
+.section-retensi-tugas-akhir .card-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.ret-card-bg-fix {
+  background: #722F99;
+  min-height: 280px;
+  height: auto;
+  width: 100%;
+  max-width: 960px;
+  border-radius: 16px;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0;
+}
+
+/* ── Top 4 Stat Metric Cards ── */
+.ret-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .ret-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .ret-stat-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ── Cards — Patokan Ukuran & Shadow Dashboard ── */
+.ret-card {
+  position: relative;
+  border-radius: 18px;
+  padding: 18px 20px;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 140px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.ret-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+/* 1. Palette 1 (#0D0B61 - Navy Blue) */
+.ret-card-blue,
+.ret-card.metric-palette-1 {
+  background: #0D0B61;
+  border: none;
+}
+
+/* 2. Palette 2 (#294669 - Dark Slate Blue) */
+.ret-card-green,
+.ret-card.metric-palette-2 {
+  background: #294669;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* 3. Palette 3 (#3D818A - Teal) */
+.ret-card-orange,
+.ret-card.metric-palette-3 {
+  background: #3D818A;
+  border: none;
+}
+
+/* 4. Palette 4 (#E5D026 - Mustard Yellow) */
+.ret-card-pink,
+.ret-card.metric-palette-4 {
+  background: #E5D026;
+  border: none;
+}
+
+.ret-card-pink .ret-card-title,
+.ret-card-pink .ret-card-value,
+.ret-card-pink .ret-card-subtext,
+.ret-card.metric-palette-4 .ret-card-title,
+.ret-card.metric-palette-4 .ret-card-value,
+.ret-card.metric-palette-4 .ret-card-subtext {
+  color: #0D0B61;
+  text-shadow: none;
+}
+
+.ret-card-pink .ret-card-info-btn,
+.ret-card.metric-palette-4 .ret-card-info-btn {
+  background: rgba(13, 11, 97, 0.15);
+  color: #0D0B61;
+  border-color: rgba(13, 11, 97, 0.25);
+}
+
+/* Card Header */
+.ret-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.ret-card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  letter-spacing: 0.1px;
+}
+
+.ret-card-info-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ret-card-info-btn:hover {
+  background: rgba(255, 255, 255, 0.38);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Card Body */
+.ret-card-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 0;
+}
+
+.ret-card-value {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Footer */
+.ret-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 18px;
+}
+
+.ret-card-subtext {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+/* ── Chart Cards Grid ── */
+.ret-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .ret-charts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.ret-chart-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px 22px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.ret-chart-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+  border-color: #e2e8f0;
+}
+
+.ret-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.ret-chart-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #334155;
+  text-align: center;
+  flex: 1;
+}
+
+.ret-chart-info-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(13, 11, 97, 0.1);
+  color: #0D0B61;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ret-chart-info-btn:hover {
+  background: rgba(13, 11, 97, 0.2);
+  color: #0D0B61;
+  transform: scale(1.08);
+}
+
+.ret-chart-body {
+  position: relative;
+  width: 100%;
+  height: 250px;
+}
+
+/* Custom Chart Legend */
+.ret-chart-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.ret-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: default;
+}
+
+.ret-legend-box {
+  width: 18px;
+  height: 9px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.ret-legend-box.selesai {
+  background-color: #3D818A;
+}
+
+.ret-legend-box.dalam-proses {
+  background-color: #E5D026;
+}
+
+.ret-legend-box.terlambat {
+  background-color: #ef4444;
+}

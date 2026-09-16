@@ -1,0 +1,149 @@
+/* ============================================
+   SIDEBAR STYLES - FMIPA Universitas Pakuan
+   TEMA UNGU #722F99 - ACTIVE PUTIH
+   Clean, Optimized & Zero Duplication
+   ============================================ */
+
+/* --- SIDEBAR BASE --- */
+.sidebar {
+  background: #722F99;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- SIDEBAR SLIM SCROLLBAR --- */
+.sidebar nav::-webkit-scrollbar {
+  width: 3px;
+}
+.sidebar nav::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+.sidebar nav::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+.sidebar nav::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* --- SIDEBAR LINK BASE & HOVER (NON-ACTIVE) --- */
+.sidebar-link {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-link span.font-medium {
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.2s ease;
+}
+
+.sidebar-link .w-8 i {
+  color: white;
+  font-size: 0.95rem;
+}
+
+.sidebar-link:not(.active):hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-link:not(.active):hover span.font-medium {
+  color: white;
+}
+
+.sidebar-link:not(.active):hover .w-8 {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* --- SIDEBAR LINK ACTIVE STATE - PUTIH BERSIH --- */
+.sidebar-link.active {
+  background: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
+  transform: scale(1.02);
+}
+
+.sidebar-link.active .w-8 {
+  background: #722F99 !important;
+  color: #ffffff !important;
+}
+
+.sidebar-link.active .w-8 i,
+.sidebar-link.active .w-8 svg {
+  color: #ffffff !important;
+}
+
+.sidebar-link.active span {
+  color: #722F99 !important;
+  font-weight: 700 !important;
+}
+
+/* --- SIDEBAR DROPDOWNS --- */
+.sidebar-dropdown-toggle {
+  align-items: center;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  min-height: 2rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.sidebar-dropdown-toggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-dropdown-toggle[aria-expanded="false"] i {
+  transform: rotate(-90deg);
+}
+
+.sidebar-dropdown-menu[data-open="false"] {
+  display: none;
+}
+
+.sidebar-dropdown-menu {
+  border-left: 1px solid rgba(233, 213, 255, 0.28);
+  margin: 0 0.35rem 0 0.65rem;
+  padding-left: 0.45rem;
+}
+
+.sidebar-dropdown-menu .sidebar-link {
+  min-height: 2.45rem;
+  padding: 0.4rem 0.5rem;
+  gap: 0.55rem;
+  border-radius: 0.55rem;
+}
+
+.sidebar-dropdown-menu .sidebar-link .w-8 {
+  width: 1.75rem;
+  height: 1.75rem;
+  flex: 0 0 1.75rem;
+  border-radius: 0.5rem;
+}
+
+.sidebar-dropdown-menu .sidebar-link span.font-medium {
+  font-size: 0.75rem;
+  line-height: 1.25;
+}
+
+/* --- SIDEBAR OVERLAY (Mobile) --- */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 40;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 280px;
+    max-width: 85vw;
+  }
+}

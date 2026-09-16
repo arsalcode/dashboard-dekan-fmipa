@@ -1,0 +1,87 @@
+/* ============================================
+   SDM DOSEN SECTION STYLES (Palette Theme)
+   Palette: #0D0B61 | #294669 | #3D818A | #E5D026
+   ============================================ */
+
+.section-sdm-dosen {
+    margin-bottom: 32px;
+}
+
+.section-sdm-dosen .card-bg-fix {
+    /* background: #0D0B61; */
+    background:#8BBB92 ;
+
+    min-height: 280px;
+    height: auto;
+    width: 100%;
+    max-width: 960px;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.section-sdm-dosen .card {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.section-sdm-dosen .card-icon-navy {
+    background: rgba(13, 11, 97, 0.12);
+    color: #0D0B61;
+}
+
+.section-sdm-dosen .card-icon-teal {
+    background: rgba(61, 129, 138, 0.12);
+    color: #3D818A;
+}
+
+/* Metric Cards for SDM Dosen */
+.metric-card-dosen {
+    border-radius: 18px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 140px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card-dosen:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+.metric-card-dosen.metric-palette-1 {
+    background: #0D0B61;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.metric-card-dosen.metric-palette-2 {
+    background: #294669;
+}
+
+.metric-card-dosen.metric-palette-3 {
+    background: #3D818A;
+}
+
+.metric-card-dosen.metric-palette-4 {
+    background: #E5D026;
+}
+
+.metric-card-dosen.metric-palette-4 .metric-card-title,
+.metric-card-dosen.metric-palette-4 .metric-main-value,
+.metric-card-dosen.metric-palette-4 .metric-subtext {
+    color: #0D0B61;
+}
+
+.metric-card-dosen.metric-palette-4 .metric-info-btn {
+    background: rgba(13, 11, 97, 0.15);
+    color: #0D0B61;
+}

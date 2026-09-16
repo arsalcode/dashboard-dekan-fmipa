@@ -1,0 +1,65 @@
+<!-- Section: SDM Dosen · Pendidikan Profesi Apoteker -->
+<div class="section-sdm-dosen">
+    <div class="dashboard-content-inner">
+        <div class="content-left">
+            <i class="fas fa-chalkboard-teacher content-icon"></i>
+            <div class="content-title-wrapper">
+                <h1>SDM Dosen</h1>
+                <div class="content-underline"></div>
+            </div>
+        </div>
+    </div>
+    <div class="card-bg">
+        <div class="card-bg-fix">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5 w-full">
+                <div class="metric-card-dosen metric-palette-2">
+                    <div class="metric-card-header">
+                        <span class="metric-card-title text-sm font-semibold text-white/95">Total Dosen</span>
+                        <button type="button" class="metric-info-btn w-5 h-5 rounded-full bg-white/20 text-white flex items-center justify-center text-[10px]"><i class="fas fa-info"></i></button>
+                    </div>
+                    <div class="metric-card-body flex items-center justify-center py-2">
+                        <span class="metric-main-value text-4xl font-extrabold text-white">15</span>
+                    </div>
+                    <div class="metric-card-footer flex items-center justify-center">
+                        <span class="metric-subtext text-xs text-white/85 font-medium">Tetap: 12 | Kontrak: 3</span>
+                    </div>
+                </div>
+                <div class="metric-card-dosen metric-palette-3">
+                    <div class="metric-card-header">
+                        <span class="metric-card-title text-sm font-semibold text-white/95">Dosen Aktif</span>
+                        <button type="button" class="metric-info-btn w-5 h-5 rounded-full bg-white/20 text-white flex items-center justify-center text-[10px]"><i class="fas fa-info"></i></button>
+                    </div>
+                    <div class="metric-card-body flex items-center justify-center py-2">
+                        <span class="metric-main-value text-4xl font-extrabold text-white">14</span>
+                    </div>
+                    <div class="metric-card-footer flex items-center justify-center">
+                        <span class="metric-subtext text-xs text-white/85 font-medium">Keaktifan: 93.3%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
+                <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex flex-col items-center transition-all hover:shadow-md">
+                    <div class="flex items-center justify-center gap-1.5 mb-3">
+                        <h3 class="text-xs font-bold text-gray-700">Distribusi Status Dosen</h3>
+                        <span class="w-4 h-4 rounded-full bg-blue-100 text-[#0D0B61] flex items-center justify-center text-[10px] font-bold">i</span>
+                    </div>
+                    <div class="w-full h-52 relative"><canvas id="chartStatusDosen"></canvas></div>
+                </div>
+                <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex flex-col items-center transition-all hover:shadow-md">
+                    <div class="flex items-center justify-center gap-1.5 mb-3">
+                        <h3 class="text-xs font-bold text-gray-700">Distribusi Jabatan Akademik</h3>
+                        <span class="w-4 h-4 rounded-full bg-blue-100 text-[#0D0B61] flex items-center justify-center text-[10px] font-bold">i</span>
+                    </div>
+                    <div class="w-full h-52 relative"><canvas id="chartJabatanDosen"></canvas></div>
+                </div>
+                <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex flex-col items-center transition-all hover:shadow-md">
+                    <div class="flex items-center justify-center gap-1.5 mb-3">
+                        <h3 class="text-xs font-bold text-gray-700">Status Sertifikasi Dosen</h3>
+                        <span class="w-4 h-4 rounded-full bg-blue-100 text-[#0D0B61] flex items-center justify-center text-[10px] font-bold">i</span>
+                    </div>
+                    <div class="w-full h-52 relative"><canvas id="chartSertifikasiDosen"></canvas></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

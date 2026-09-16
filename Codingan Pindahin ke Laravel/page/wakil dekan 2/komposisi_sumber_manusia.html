@@ -1,0 +1,116 @@
+<!-- Section 2: Komposisi Sumber Daya Manusia -->
+<div class="section-komposisi-sdm">
+    <div class="dashboard-content-inner flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+        <div class="content-left">
+            <i class="fas fa-users content-icon"></i>
+            <div class="content-title-wrapper">
+                <h1>Komposisi Sumber Daya Manusia</h1>
+                <div class="content-underline"></div>
+            </div>
+        </div>
+        <p class="text-xs text-gray-500 mt-2 sm:mt-0 font-medium">Distribusi dosen berdasarkan status kepegawaian dan jabatan akademik</p>
+    </div>
+
+    <!-- Container Kartu & Grafik Komposisi SDM -->
+    <div class="card-bg">
+        <div class="komposisi-sdm-container">
+
+            <!-- 3 Kartu Metrik Utama -->
+            <div class="wd2-sdm-stat-grid">
+                <!-- Card 1: Total SDM Dosen (Sky Blue) -->
+                <div class="wd2-sdm-card wd2-sdm-card-blue">
+                    <div class="wd2-card-header">
+                        <span class="wd2-card-title">Total SDM Dosen</span>
+                        <button type="button" class="wd2-card-info-btn" title="Total Dosen Aktif di Lingkungan FMIPA UNPAK">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                    </div>
+                    <div class="wd2-card-body">
+                        <span class="wd2-card-value" id="valWd2TotalSdm">148</span>
+                    </div>
+                    <div class="wd2-card-footer">
+                        <span class="wd2-card-subtext" id="subWd2TotalSdm">Aktif di FMIPA</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Rata-rata Penelitian/Dosen (Mint / Neon Green) -->
+                <div class="wd2-sdm-card wd2-sdm-card-green">
+                    <div class="wd2-card-header">
+                        <span class="wd2-card-title">Rata-rata Penelitian/Dosen</span>
+                        <button type="button" class="wd2-card-info-btn" title="Rata-rata Publikasi / Penelitian per Dosen di Tahun 2026">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                    </div>
+                    <div class="wd2-card-body">
+                        <span class="wd2-card-value" id="valWd2RataPenelitian">1.8</span>
+                    </div>
+                    <div class="wd2-card-footer">
+                        <span class="wd2-card-subtext" id="subWd2RataPenelitian">Penelitian per dosen (2026)</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: HR Alert (Pink / Salmon Coral) -->
+                <div class="wd2-sdm-card wd2-sdm-card-pink">
+                    <div class="wd2-card-header">
+                        <span class="wd2-card-title">HR Alert</span>
+                        <button type="button" class="wd2-card-info-btn" title="Peringatan Dosen Pensiun & Kontrak Mendekati Berakhir">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                    </div>
+                    <div class="wd2-card-body">
+                        <span class="wd2-card-value" id="valWd2HrAlert">3</span>
+                    </div>
+                    <div class="wd2-card-footer">
+                        <span class="wd2-card-subtext" id="subWd2HrAlert">1 pensiun · 2 kontrak habis</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 Grafik Grid -->
+            <div class="wd2-sdm-charts-grid">
+                <!-- Grafik 1: Komposisi Status Kepegawaian (Doughnut Chart) -->
+                <div class="wd2-chart-card">
+                    <div class="wd2-chart-header">
+                        <div class="wd2-header-spacer"></div>
+                        <h4 class="wd2-chart-title">Komposisi Status Kepegawaian</h4>
+                        <button type="button" class="wd2-chart-info-btn" title="Proporsi dosen berdasarkan status kepegawaian">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                    </div>
+                    <div class="wd2-chart-body">
+                        <canvas id="chartWd2StatusKepegawaian"></canvas>
+                    </div>
+                </div>
+
+                <!-- Grafik 2: Distribusi Jabatan Akademik (Doughnut Chart) -->
+                <div class="wd2-chart-card">
+                    <div class="wd2-chart-header">
+                        <div class="wd2-header-spacer"></div>
+                        <h4 class="wd2-chart-title">Distribusi Jabatan Akademik</h4>
+                        <button type="button" class="wd2-chart-info-btn" title="Distribusi jenjang jabatan fungsional akademik dosen">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                    </div>
+                    <div class="wd2-chart-body">
+                        <canvas id="chartWd2JabatanAkademik"></canvas>
+                    </div>
+                </div>
+
+                <!-- Grafik 3: Produktivitas per Prodi (Bar Chart) -->
+                <div class="wd2-chart-card">
+                    <div class="wd2-chart-header">
+                        <div class="wd2-header-spacer"></div>
+                        <h4 class="wd2-chart-title">Produktivitas per Prodi</h4>
+                        <button type="button" class="wd2-chart-info-btn" title="Skor produktivitas penelitian dan pengajaran per program studi">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                    </div>
+                    <div class="wd2-chart-body">
+                        <canvas id="chartWd2ProduktivitasProdi"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

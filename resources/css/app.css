@@ -1,0 +1,255 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Plus Jakarta Sans', 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --color-unpak-purple: #722F99;
+    --color-unpak-dark: #0D0B61;
+    --color-unpak-bg: #ffffff;
+}
+
+@import './sidebar.css';
+@import './dashboard/dashboard.css';
+@import './dashboard/sdm_dosen.css';
+@import './dashboard/sdm_mahasiswa.css';
+@import './dashboard/penelitian_publikasi.css';
+@import './dashboard/keuangan_administrasi.css';
+@import './dashboard/media_sosial.css';
+@import './dashboard/kerjasama_partnership.css';
+@import './dashboard/kemahasiswaan.css';
+
+@import './wadek1/wadek1.css';
+
+@import './wadek2/wadek2.css';
+
+@import './wadek3/wadek3.css';
+
+@import './dosen/dosen.css';
+
+@import './mahasiswa/mahasiswa.css';
+
+@import './kurikulum/kurikulum.css';
+
+@import './penelitian/penelitian.css';
+
+@import './web-medsos/web-medsos.css';
+
+@import './instagram-analytics/instagram-analytics.css';
+
+@import './kerjasama/kerjasama.css';
+
+@import './partisipasi/partisipasi.css';
+
+@import './unit-bisnis/unit-bisnis.css';
+
+@import './comstrac-dsc/comstrac-dsc.css';
+
+@import './kesehatan-apotek/kesehatan-apotek.css';
+
+@import './lab-gis/lab-gis.css';
+
+@import './lab-service/lab-service.css';
+
+/* ==========================================================================
+   SHARED REUSABLE SECTION CARD & OFFSET ARCHITECTURE
+   Eliminating duplicate inline styling across all pages
+   ========================================================================== */
+.section-card {
+    margin-bottom: 2.5rem;
+}
+
+.section-card .card-bg-fix {
+    background: #722F99;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(58, 18, 81, 0.25), 0 8px 10px -6px rgba(58, 18, 81, 0.25);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+    .section-card .card-bg {
+        margin-top: 100px !important;
+        margin-left: 0 !important;
+    }
+}
+
+/* ==========================================================================
+   Global Select & Option Theme Styling (Eliminate Browser Blue Highlights)
+   ========================================================================== */
+select {
+    accent-color: #722F99;
+}
+
+select:focus {
+    outline: none;
+    border-color: #722F99;
+}
+
+select option {
+    background-color: #ffffff;
+    color: #1e293b;
+    padding: 6px 12px;
+}
+
+select option:hover,
+select option:focus,
+select option:checked {
+    background: #722F99 linear-gradient(0deg, #722F99 0%, #722F99 100%) !important;
+    background-color: #722F99 !important;
+    color: #ffffff !important;
+}
+
+/* For dark selects (table headers, purple containers) */
+select.bg-white\/15 option,
+select.bg-white\/10 option,
+.dark-select option {
+    background-color: #2D0C41 !important;
+    color: #ffffff !important;
+}
+
+select.bg-white\/15 option:hover,
+select.bg-white\/15 option:focus,
+select.bg-white\/15 option:checked,
+select.bg-white\/10 option:hover,
+select.bg-white\/10 option:focus,
+select.bg-white\/10 option:checked,
+.dark-select option:hover,
+.dark-select option:focus,
+.dark-select option:checked {
+    background: #722F99 linear-gradient(0deg, #722F99 0%, #722F99 100%) !important;
+    background-color: #722F99 !important;
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+   Custom Table Page Size Dropdown (Executive Royal Purple, Zero OS Blue)
+   ========================================================================== */
+.table-pagesize-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.table-pagesize-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+    user-select: none;
+}
+
+.table-pagesize-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+.table-pagesize-btn:focus,
+.table-pagesize-dropdown.open .table-pagesize-btn {
+    outline: none;
+    border-color: #fbbf24;
+    box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.35);
+}
+
+.table-pagesize-btn .chevron-icon {
+    font-size: 0.625rem;
+    color: #e9d5ff;
+    transition: transform 0.2s ease;
+}
+
+.table-pagesize-dropdown.open .chevron-icon {
+    transform: rotate(180deg);
+}
+
+.table-pagesize-menu {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 4px);
+    min-width: 72px;
+    width: 78px;
+    background: rgba(45, 12, 65, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 0.75rem;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+    padding: 4px;
+    z-index: 50;
+    display: none;
+}
+
+.table-pagesize-dropdown.open .table-pagesize-menu {
+    display: block;
+}
+
+.table-pagesize-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 0.5rem;
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    text-align: left;
+}
+
+.table-pagesize-item:hover:not(.is-active) {
+    background: rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+}
+
+.table-pagesize-item.is-active {
+    background: #ffffff;
+    color: #722F99;
+    font-weight: 800;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.table-pagesize-item.is-active::after {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 9px;
+    color: #722F99;
+}
+
+/* For light cards (sub-units) */
+.table-pagesize-dropdown.is-light .table-pagesize-btn {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+}
+
+.table-pagesize-dropdown.is-light .table-pagesize-btn:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.table-pagesize-dropdown.is-light .table-pagesize-btn .chevron-icon {
+    color: #64748b;
+}
+
+

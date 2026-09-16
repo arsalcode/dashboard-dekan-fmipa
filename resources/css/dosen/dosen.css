@@ -1,0 +1,684 @@
+/* ============================================
+   DATA OPERASIONAL DOSEN - FMIPA UNIVERSITAS PAKUAN
+   Modular Stylesheet • Standar Eksekutif
+   ============================================ */
+
+.section-dosen {
+  margin-bottom: 3rem;
+}
+
+.section-dosen .card-bg-fix {
+  background: #722F99;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 20px 25px -5px rgba(58, 18, 81, 0.25), 0 8px 10px -6px rgba(58, 18, 81, 0.25);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .section-dosen .card-bg {
+    margin-top: 100px !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* ============================================
+   CUSTOM PILL DROPDOWNS (ROYAL PURPLE THEME)
+   Hover & active states exclusively in royal purple #722F99
+   ============================================ */
+
+.dosen-filter-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #e9d5ff; /* purple-200 */
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  flex-shrink: 0;
+  letter-spacing: 0.025em;
+}
+
+.dosen-dropdown-wrap {
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+}
+
+.dosen-dropdown-wrap.open {
+  z-index: 50;
+}
+
+.dosen-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  color: #ffffff !important;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.375rem 0.875rem !important;
+  border-radius: 0.75rem !important; /* rounded-xl like dashboard */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.dosen-pill-btn:hover {
+  background: rgba(255, 255, 255, 0.24) !important;
+  border-color: rgba(255, 255, 255, 0.40) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.dosen-pill-btn:focus,
+.dosen-dropdown-wrap.open .dosen-pill-btn {
+  outline: none;
+  background: rgba(255, 255, 255, 0.24) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow: 0 0 0 2px rgba(253, 224, 71, 0.35) !important;
+  color: #ffffff !important;
+}
+
+.dosen-pill-btn .chevron-icon {
+  font-size: 0.65rem;
+  color: #e9d5ff !important; /* purple-200 */
+  transition: transform 0.2s ease, color 0.2s ease;
+  margin-left: 2px;
+}
+
+.dosen-dropdown-wrap.open .chevron-icon {
+  transform: rotate(180deg);
+  color: #ffffff !important;
+}
+
+.dosen-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 180px;
+  width: max-content;
+  max-width: 260px;
+  max-height: 280px;
+  overflow-y: auto;
+  background: rgba(45, 12, 65, 0.96) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45) !important;
+  padding: 6px !important;
+  z-index: 100;
+  display: none;
+}
+
+.dosen-dropdown-menu::-webkit-scrollbar {
+  width: 5px;
+}
+.dosen-dropdown-menu::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+.dosen-dropdown-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+}
+.dosen-dropdown-menu::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.dosen-dropdown-wrap.open .dosen-dropdown-menu {
+  display: block;
+}
+
+.dosen-dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88) !important;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  background: transparent;
+  border: 1px solid transparent;
+  text-align: left;
+}
+
+/* Clear & prominent hover state like Dashboard */
+.dosen-dropdown-item:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.22) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  padding-left: 17px;
+}
+
+/* Active selected state matching purple-executive theme from Dashboard */
+.dosen-dropdown-item.active {
+  background: #ffffff !important;
+  color: #722F99 !important;
+  border-color: #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.20) !important;
+}
+
+.dosen-dropdown-item.active:hover {
+  background: #ffffff !important;
+  color: #722F99 !important;
+}
+
+/* Checkmark icon on active item */
+.dosen-dropdown-item.active::after {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 11px;
+  color: #722F99;
+  margin-left: 10px;
+}
+
+/* Sticky Compact Header */
+#compactStickyBarDosen {
+  position: sticky;
+  top: 0.75rem;
+  z-index: 45;
+  height: 0;
+  overflow: visible;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-12px);
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#compactStickyBarDosen.is-active {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Compact sticky header adjustments matching Dashboard */
+#compactStickyBarDosen .dosen-pill-btn {
+  padding: 0.375rem 0.875rem !important;
+  font-size: 0.8125rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+}
+
+#compactStickyBarDosen .dosen-dropdown-item {
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+/* Align rightmost compact dropdown menu to avoid edge clipping */
+#wrapCompactFilterDosenStatus .dosen-dropdown-menu {
+  left: auto !important;
+  right: 0 !important;
+}
+
+.dosen-filter-reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.dosen-filter-reset:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   CHART TAB PILLS (Status / Pendidikan / Sertifikasi)
+   ============================================ */
+
+.dosen-chart-tab-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 9999px;
+}
+
+.dosen-chart-tab-pill {
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.dosen-chart-tab-pill:hover {
+  color: #722F99;
+}
+
+.dosen-chart-tab-pill.active {
+  background: #ffffff;
+  color: #722F99;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dosen-chart-canvas-view {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.dosen-chart-canvas-view.active {
+  display: block;
+}
+
+/* ============================================
+   JABATAN AKADEMIK DOSEN (5 STAT CARDS)
+   ============================================ */
+
+.jabatan-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .jabatan-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.jabatan-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .jabatan-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .jabatan-stat-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+.jabatan-card {
+  background: linear-gradient(135deg, #722F99 0%, #581c87 100%) !important;
+  border: 2px solid rgba(255, 255, 255, 0.80) !important;
+  border-radius: 1rem !important; /* rounded-2xl */
+  padding: 1.25rem 1rem !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #ffffff !important;
+  box-shadow: 0 10px 25px -5px rgba(59, 7, 100, 0.4), 0 8px 10px -6px rgba(59, 7, 100, 0.4) !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jabatan-card:hover {
+  transform: scale(1.02);
+  border-color: #ffffff !important;
+  box-shadow: 0 16px 30px -5px rgba(59, 7, 100, 0.5) !important;
+}
+
+.jabatan-card-title {
+  font-size: 0.8125rem !important;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  line-height: 1.25;
+}
+
+.jabatan-card-val {
+  font-size: 1.875rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.jabatan-card-sub {
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #34d399 !important; /* emerald-400 for growth rate */
+}
+
+.jabatan-card-base {
+  font-size: 0.6875rem !important;
+  font-weight: 500 !important;
+  color: #e9d5ff !important; /* text-purple-200 */
+}
+
+/* Custom Dropdown for Periode Riwayat Chart (Tahun Awal & Akhir) */
+#wrapFilterJabatanTahunAwal .dosen-pill-btn,
+#wrapFilterJabatanTahunAkhir .dosen-pill-btn {
+  padding: 0.35rem 0.75rem !important;
+  min-width: 82px;
+  justify-content: space-between;
+}
+
+#wrapFilterJabatanTahunAwal .dosen-dropdown-menu,
+#wrapFilterJabatanTahunAkhir .dosen-dropdown-menu {
+  min-width: 90px !important;
+  width: 90px !important;
+  max-height: 220px !important;
+  top: calc(100% + 6px) !important;
+  left: 0 !important;
+}
+
+#wrapFilterJabatanTahunAwal .dosen-dropdown-item,
+#wrapFilterJabatanTahunAkhir .dosen-dropdown-item {
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ============================================
+   PROGRESS STUDI LANJUT S3 DOSEN
+   ============================================ */
+
+.studi-lanjut-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .studi-lanjut-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.studi-dosen-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+}
+
+.studi-dosen-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.studi-dosen-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.studi-dosen-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #722F99, #9333ea);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(114, 47, 153, 0.25);
+}
+
+.studi-dosen-info h5 {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.3;
+}
+
+.studi-dosen-info p {
+  font-size: 0.7rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.studi-univ-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.studi-progress-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.studi-progress-bar-bg {
+  width: 100%;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.studi-progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #722F99, #3D818A);
+  border-radius: 9999px;
+  transition: width 0.4s ease;
+}
+
+.btn-studi-nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  color: #ffffff !important;
+  padding: 6px 14px;
+  border-radius: 0.75rem !important;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
+}
+
+.btn-studi-nav-pill:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.24) !important;
+  border-color: rgba(255, 255, 255, 0.40) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+  transform: translateY(-1px);
+}
+
+.btn-studi-nav-pill:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   DATA DOSEN PER PRODI (TABLE & TABS)
+   ============================================ */
+
+.search-dosen-input {
+  width: 100%;
+  padding-left: 2.25rem;
+  padding-right: 0.875rem;
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+  font-size: 0.75rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  color: #ffffff !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
+}
+
+.search-dosen-input::placeholder {
+  color: rgba(233, 213, 255, 0.75) !important; /* purple-200 */
+}
+
+.search-dosen-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.20) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow: 0 0 0 2px rgba(253, 224, 71, 0.35) !important;
+}
+
+.btn-data-prodi-tab {
+  padding: 8px 16px;
+  border-radius: 0.75rem; /* rounded-xl like dashboard */
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  flex-shrink: 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.btn-data-prodi-tab:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-data-prodi-tab.active {
+  background: #ffffff !important;
+  color: #722F99 !important;
+  font-weight: 700 !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn-data-prodi-tab.active:hover {
+  background: #ffffff !important;
+  color: #5b217a !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.20) !important;
+}
+
+.btn-data-kategori-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 0.75rem; /* rounded-xl like dashboard */
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.btn-data-kategori-pill:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-data-kategori-pill.active {
+  background: #ffffff !important;
+  color: #722F99 !important;
+  font-weight: 700 !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn-data-kategori-pill.active i {
+  color: #722F99 !important;
+}
+
+.btn-data-kategori-pill:not(.active) i {
+  color: #fde047 !important;
+}
+
+.btn-export-dosen {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border-radius: 0.75rem !important; /* rounded-xl like dashboard */
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff !important;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
+}
+
+.btn-export-dosen:hover {
+  background: rgba(255, 255, 255, 0.24) !important;
+  border-color: rgba(255, 255, 255, 0.40) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.btn-export-dosen i {
+  color: #fde047 !important;
+}

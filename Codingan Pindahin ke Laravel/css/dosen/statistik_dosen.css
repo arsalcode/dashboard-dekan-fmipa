@@ -1,0 +1,478 @@
+/* ============================================
+   STATISTIK DOSEN - FMIPA UNIVERSITAS PAKUAN
+   Tema Sage Green (#8BBB92) & Responsive Sesuai UI Wakil Dekan 1
+   ============================================ */
+
+.section-statistik-dosen {
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+/* ── Section Title & Subtitle ── */
+.dosen-header-subtitle {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-top: 0.35rem;
+  margin-bottom: 0;
+  line-height: 1.45;
+}
+
+/* ── Alert Notice Banner Sesuai Tema Sage Green ── */
+.dosen-alert-banner {
+  background-color: #f0fdf4;
+  border-left: 4.5px solid #8BBB92;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-top: 1.25rem;
+  margin-bottom: 1.75rem;
+  box-shadow: 0 2px 8px rgba(139, 187, 146, 0.12);
+}
+
+.dosen-alert-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.dosen-alert-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background-color: #8BBB92;
+  color: #ffffff;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  margin-top: 1px;
+}
+
+.dosen-alert-text {
+  font-size: 0.84rem;
+  color: #1e3f20;
+  line-height: 1.55;
+}
+
+.dosen-alert-text strong {
+  color: #143017;
+  font-weight: 700;
+}
+
+/* ── Container Pembungkus Sage Green (#8BBB92) ── */
+.section-statistik-dosen .card-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.dosen-overview-container {
+  background: #8BBB92;
+  min-height: 280px;
+  height: auto;
+  width: 100%;
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 30px rgba(139, 187, 146, 0.28);
+}
+
+/* ── Top Row: 4 Kartu Metrik Utama ── */
+.dosen-stat-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .dosen-stat-metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .dosen-stat-metrics-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Kartu Metrik Dosen (Sama Persis Palette & Ukuran WD2) */
+.dosen-metric-card {
+  position: relative;
+  border-radius: 18px;
+  padding: 18px 20px;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 140px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.dosen-metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+/* Palette 1: Navy Blue (#0D0B61) */
+.dosen-metric-card.metric-palette-1 {
+  background: #0D0B61;
+  border: none;
+}
+
+/* Palette 2: Dark Slate Blue (#294669) */
+.dosen-metric-card.metric-palette-2 {
+  background: #294669;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Palette 3: Teal (#3D818A) */
+.dosen-metric-card.metric-palette-3 {
+  background: #3D818A;
+  border: none;
+}
+
+/* Palette 4: Mustard Yellow (#E5D026) */
+.dosen-metric-card.metric-palette-4 {
+  background: #E5D026;
+  border: none;
+}
+
+.dosen-metric-card.metric-palette-4 .dosen-metric-title,
+.dosen-metric-card.metric-palette-4 .dosen-metric-value,
+.dosen-metric-card.metric-palette-4 .dosen-metric-subtext {
+  color: #0D0B61;
+  text-shadow: none;
+}
+
+.dosen-metric-card.metric-palette-4 .dosen-metric-info-btn {
+  background: rgba(13, 11, 97, 0.15);
+  color: #0D0B61;
+  border-color: rgba(13, 11, 97, 0.25);
+}
+
+/* Header Kartu Metrik */
+.dosen-metric-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.dosen-metric-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  letter-spacing: 0.1px;
+}
+
+.dosen-metric-info-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.dosen-metric-info-btn:hover {
+  color: #ffffff;
+  transform: translateY(-50%) scale(1.15);
+}
+
+/* Body Kartu Metrik */
+.dosen-metric-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0;
+}
+
+.dosen-metric-value {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.14);
+}
+
+/* Footer Kartu Metrik */
+.dosen-metric-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dosen-metric-subtext {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  text-align: center;
+}
+
+/* ── Bottom Row: Grid 2 Kartu Grafik Putih ── */
+.dosen-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .dosen-charts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.dosen-chart-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px 22px;
+  border: 1px solid #eef2f6;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.dosen-chart-card:hover {
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.08);
+  border-color: #e2e8f0;
+}
+
+.dosen-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.dosen-header-spacer {
+  width: 22px;
+}
+
+.dosen-chart-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #334155;
+  text-align: center;
+  flex: 1;
+}
+
+.dosen-chart-info-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(13, 11, 97, 0.1);
+  color: #0D0B61;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.dosen-chart-info-btn:hover {
+  background: #0D0B61;
+  color: #ffffff;
+}
+
+/* Legend Styling */
+.dosen-chart-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.dosen-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.dosen-legend-box {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+/* Tab Pills for Chart 2 */
+.dosen-chart-tab-pills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 12px;
+  background-color: #f1f5f9;
+  padding: 3px;
+  border-radius: 9999px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dosen-chart-tab-pill {
+  border: none;
+  background: transparent;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dosen-chart-tab-pill.active {
+  background: #8BBB92;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(139, 187, 146, 0.35);
+}
+
+.dosen-chart-body {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  min-height: 250px;
+}
+
+.dosen-chart-canvas-view {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.dosen-chart-canvas-view.active {
+  display: block;
+}
+
+.dosen-chart-footer-note {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 11.5px;
+  color: #64748b;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Legend untuk Status Sertifikasi */
+.dosen-sertif-legend-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  width: 100%;
+}
+
+.dosen-sertif-legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+.dosen-sertif-pill-green {
+  width: 28px;
+  height: 7px;
+  background-color: #10b981;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.dosen-sertif-pill-gray {
+  width: 28px;
+  height: 7px;
+  background-color: #e2e8f0;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+/* ── Rekapitulasi Table Section ── */
+.dosen-table-container {
+  margin-top: 2rem;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(139, 187, 146, 0.2);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  padding: 1.5rem;
+}
+
+.dosen-table-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dosen-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.dosen-table th {
+  background-color: #f4fbf5;
+  color: #24502d;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.85rem 1rem;
+  border-bottom: 2px solid rgba(139, 187, 146, 0.25);
+  white-space: nowrap;
+}
+
+.dosen-table td {
+  padding: 0.9rem 1rem;
+  font-size: 0.835rem;
+  color: #334155;
+  border-bottom: 1px solid #f1f5f9;
+  white-space: nowrap;
+}
+
+.dosen-table tbody tr:hover td {
+  background-color: #fdfafd;
+}
