@@ -1,15 +1,16 @@
 FROM php:8.3-apache
 
-# Install required system packages and PHP extensions
+# Install required system packages and PHP extensions (MySQL, PostgreSQL, GD, etc.)
 RUN apt-get update && apt-get install -y \
     git \
     curl \
     libpng-dev \
     libonig-dev \
     libxml2-dev \
+    libpq-dev \
     zip \
     unzip \
-    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd \
+    && docker-php-ext-install pdo_mysql pdo_pgsql mbstring exif pcntl bcmath gd \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -32,11 +33,13 @@ COPY . /var/www/html
 # Install production PHP dependencies
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
-# Set appropriate permissions for Laravel storage and bootstrap/cache
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
-    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+# Set appropriate permissions for Laravel storage, bootstrap/cache, and database (for SQLite)
+RUN mkdir -p /var/www/html/database \
+    && touch /var/www/html/database/database.sqlite \
+    && chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database \
+    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database
 
-# Render injects $PORT (defaults to 80 if not set)
+# Koyeb / cloud platforms inject $PORT (defaults to 80 if not set)
 EXPOSE 80
 
-CMD sh -c "PORT=\${PORT:-80} && sed -i \"s/Listen 80/Listen \$PORT/g\" /etc/apache2/ports.conf && sed -i \"s/:80/:\$PORT/g\" /etc/apache2/sites-available/000-default.conf && apache2-foreground"
+CMD sh -c "PORT=\${PORT:-80} && sed -i \"s/Listen 80/Listen \$PORT/g\" /etc/apache2/ports.conf && sed -i \"s/:80/:\$PORT/g\" /etc/apache2/sites-available/000-default.conf && php artisan config:clear && apache2-foreground"
