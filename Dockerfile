@@ -1,6 +1,6 @@
-FROM php:8.3-apache
+FROM php:8.3-cli
 
-# Install required system packages and PHP extensions (MySQL, PostgreSQL, GD, etc.)
+# Install system dependencies and PHP extensions
 RUN apt-get update && apt-get install -y \
     git \
     curl \
@@ -10,36 +10,45 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     zip \
     unzip \
-    && docker-php-ext-install pdo_mysql pdo_pgsql mbstring exif pcntl bcmath gd \
+    sqlite3 \
+    libsqlite3-dev \
+    && docker-php-ext-install pdo_mysql pdo_pgsql pdo_sqlite mbstring exif pcntl bcmath gd \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Configure Apache DocumentRoot to Laravel's public directory
-ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
-RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf \
-    && sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf \
-    && echo '<Directory /var/www/html/public>\n    AllowOverride All\n    Require all granted\n</Directory>' >> /etc/apache2/apache2.conf \
-    && a2enmod rewrite
+# Create user with UID 1000 (standard for Hugging Face Spaces non-root containers)
+RUN useradd -m -u 1000 user
 
-# Set working directory
-WORKDIR /var/www/html
+WORKDIR /home/user/app
 
-# Copy application files
-COPY . /var/www/html
+# Copy project files with ownership set to user
+COPY --chown=user:user . /home/user/app
+
+# Switch to non-root user
+USER user
+
+# Set default production environment variables
+ENV APP_ENV=production \
+    APP_DEBUG=false \
+    APP_KEY=base64:1JnAVNehGzqtCWGaAvhOvt2neYclUoq5siczWTc75+Q= \
+    APP_NAME="Dashboard Dekan FMIPA" \
+    DB_CONNECTION=sqlite \
+    SESSION_DRIVER=cookie \
+    CACHE_STORE=file \
+    PORT=7860
 
 # Install production PHP dependencies
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
-# Set appropriate permissions for Laravel storage, bootstrap/cache, and database (for SQLite)
-RUN mkdir -p /var/www/html/database \
-    && touch /var/www/html/database/database.sqlite \
-    && chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database \
-    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database
+# Prepare storage, cache, and sqlite database
+RUN mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache bootstrap/cache database \
+    && touch database/database.sqlite \
+    && chmod -R 777 storage bootstrap/cache database
 
-# Koyeb / cloud platforms inject $PORT (defaults to 80 if not set)
-EXPOSE 80
+# Hugging Face Spaces default port
+EXPOSE 7860
 
-CMD sh -c "PORT=\${PORT:-80} && sed -i \"s/Listen 80/Listen \$PORT/g\" /etc/apache2/ports.conf && sed -i \"s/:80/:\$PORT/g\" /etc/apache2/sites-available/000-default.conf && php artisan config:clear && apache2-foreground"
+CMD ["sh", "-c", "php artisan config:clear && php artisan serve --host=0.0.0.0 --port=${PORT:-7860}"]

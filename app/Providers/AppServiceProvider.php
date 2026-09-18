@@ -24,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
             || str_contains(request()->header('host', ''), 'trycloudflare.com')
             || str_contains(request()->header('host', ''), 'ngrok')
             || str_contains(request()->header('host', ''), 'loca.lt')
+            || str_contains(request()->header('host', ''), 'hf.space')
         ) {
             \Illuminate\Support\Facades\URL::forceScheme('https');
         }
