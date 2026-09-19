@@ -38,7 +38,7 @@ ENV APP_ENV=production \
     DB_CONNECTION=sqlite \
     SESSION_DRIVER=cookie \
     CACHE_STORE=file \
-    PORT=7860
+    PORT=8000
 
 # Install production PHP dependencies
 RUN composer install --no-dev --optimize-autoloader --no-interaction
@@ -48,7 +48,7 @@ RUN mkdir -p storage/framework/sessions storage/framework/views storage/framewor
     && touch database/database.sqlite \
     && chmod -R 777 storage bootstrap/cache database
 
-# Hugging Face Spaces default port
-EXPOSE 7860
+# Port exposed for Koyeb / Container cloud hosting
+EXPOSE 8000
 
-CMD ["sh", "-c", "php artisan config:clear && php artisan serve --host=0.0.0.0 --port=${PORT:-7860}"]
+CMD ["sh", "-c", "php artisan config:clear && php artisan serve --host=0.0.0.0 --port=${PORT:-8000}"]
